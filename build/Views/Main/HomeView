@@ -1,0 +1,26 @@
+//
+//  HomeView 2.swift
+//  Big Mamas Cooking
+//
+//  Created by Tahzjeen-Amir on 2/7/25.
+//
+
+import SwiftUI
+
+struct HomeView: View {
+    var body: some View {
+        NavigationView {
+            ScrollView {
+                RecipeList(recipes: Recipe.all)
+            }
+            .navigationTitle("Big Mama's Cooking")
+        }
+        .navigationViewStyle(.stack)
+    }
+        
+        struct HomeView_Previews: PreviewProvider {
+            static var previews: some View {
+                HomeView()
+            }
+        }
+    }
