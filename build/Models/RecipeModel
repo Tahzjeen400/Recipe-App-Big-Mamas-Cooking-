@@ -1,0 +1,1568 @@
+//
+//  Recipe.swift
+//  Big Mamas Cooking
+//
+//  Created by Tahzjeen-Amir on 2/7/25.
+//
+
+import SwiftUI
+
+struct Recipe: Identifiable {
+    var id = String()
+    let name: String
+    let description: String
+    let ingredients: String
+    let directions: String
+    let category: String
+    let url: String
+    let photoUrlLarge: String
+    let photoUrlSmall: String
+    let youtube_url: String
+
+  
+    init(id: String, name: String, description: String, ingredients: String, directions: String, category: String, url: String, photoUrlLarge: String, photoUrlSmall: String, youtube_url: String) {
+        self.id = UUID().uuidString
+        self.name = name
+        self.description = description
+        self.ingredients = ingredients
+        self.directions = directions
+        self.category = category
+        self.url = url
+        self.photoUrlLarge = photoUrlLarge
+        self.photoUrlSmall = photoUrlSmall
+        self.youtube_url = youtube_url
+    }
+}
+
+extension Recipe {
+    static let all: [Recipe] = [
+        Recipe(id: "0c6ca6e7-e32a-4053-b824-1dbf749910d8",
+               name: "Apam Balik",
+               description: "is a Southeast Asian fluffy pancake with cream corn and peanuts. This soft pancake which is usually made to order has a thick surface with thin and crispy side." ,
+               ingredients: """
+            200 ml milk 
+            60 ml oil
+            2 egg(s)
+            160 g wheat flour
+            3 tsp baking powder
+            1⁄2 tsp salt
+            25 g unsalted butter
+            3 tbsp creamed corn
+            45 g sugar
+            3 tbsp peanuts
+            """,
+               directions: "Mix milk, oil and egg together. Sift flour, baking powder and salt into the mixture. Stir well until all ingredients are combined evenly. Spread some batter onto the pan. Spread a thin layer of batter to the side of the pan. Cover the pan for 30-60 seconds until small air bubbles appear. Add butter, cream corn, crushed peanuts and sugar onto the pancake. Fold the pancake into half once the bottom surface is browned. Cut into wedges and best eaten when it is warm.",
+               category: "Malaysian",
+               url: "https://www.nyonyacooking.com/recipes/apam-balik~SJ5WuvsDf9WQ",
+               photoUrlLarge: "https://d3jbb8n5wk0qxi.cloudfront.net/photos/b9ab0071-b281-4bee-b361-ec340d405320/large.jpg",
+               photoUrlSmall: "https://d3jbb8n5wk0qxi.cloudfront.net/photos/b9ab0071-b281-4bee-b361-ec340d405320/small.jpg",
+               youtube_url: "https://www.youtube.com/watch?v=6R8ffRRJcrg"),
+        Recipe(
+            id: "599344f4-3c5c-4cca-b914-2210e3b3312f",
+            name: "Apple & Blackberry Crumble",
+            description: "A classic British dessert that combines sweet and tangy fruit with a crunchy, buttery topping. Juicy apples and blackberries are baked together with a touch of sugar and cinnamon until soft and bubbling.",
+            ingredients: """
+            120g plain flour
+            60g caster sugar
+            60g unsalted butter (cut into pieces)
+            300g Braeburn apple
+            30g unsalted butter
+            30g demerara sugar
+            115g blackberries
+            ¼ tsp ground cinnamon
+            """,
+            directions: """
+            Step 1: Heat oven to 190C/170C fan/gas 5. Tip 120g plain flour and 60g caster sugar into a large bowl.
+            Step 2: Add 60g unsalted butter, then rub into the flour using your fingertips to make a light breadcrumb texture. Do not overwork it or the crumble will become heavy.
+            Step 3: Sprinkle the mixture evenly over a baking sheet and bake for 15 mins or until lightly coloured.
+            Step 4: Meanwhile, for the compote, peel, core and cut 300g Braeburn apples into 2cm dice.
+            Step 5: Put 30g unsalted butter and 30g demerara sugar in a medium saucepan and melt together over a medium heat. Cook for 3 mins until the mixture turns to a light caramel.
+            Step 6: Stir in the apples and cook for 3 mins. Add 115g blackberries and ¼ tsp ground cinnamon, and cook for 3 mins more.
+            Step 7: Cover, remove from the heat, then leave for 2-3 mins to continue cooking in the warmth of the pan.
+            Step 8: To serve, spoon the warm fruit into an ovenproof gratin dish, top with the crumble mix, then reheat in the oven for 5-10 mins. Serve with vanilla ice cream.
+            """,
+            category: "British",
+            url: "https://www.bbcgoodfood.com/recipes/apple-blackberry-crumble",
+            photoUrlLarge: "https://d3jbb8n5wk0qxi.cloudfront.net/photos/535dfe4e-5d61-4db6-ba8f-7a27b1214f5d/large.jpg",
+            photoUrlSmall: "https://d3jbb8n5wk0qxi.cloudfront.net/photos/535dfe4e-5d61-4db6-ba8f-7a27b1214f5d/small.jpg",
+            youtube_url: "https://www.youtube.com/watch?v=4vhcOwVBDO4"
+        ),
+        Recipe(
+            id: "74f6d4eb-da50-4901-94d1-deae2d8af1d1",
+            name: "Apple Frangipane Tart",
+              description: "A delicious dessert that combines a buttery tart crust, a rich almond frangipane filling, and thinly sliced apples on top.",
+              ingredients: "Coming Soon!",
+              directions: "Coming Soon!",
+              category: "British",
+              url: "N/A",
+              photoUrlLarge: "https://d3jbb8n5wk0qxi.cloudfront.net/photos/7276e9f9-02a2-47a0-8d70-d91bdb149e9e/large.jpg",
+              photoUrlSmall: "https://d3jbb8n5wk0qxi.cloudfront.net/photos/7276e9f9-02a2-47a0-8d70-d91bdb149e9e/small.jpg",
+              youtube_url: "https://www.youtube.com/watch?v=rp8Slv4INLk"
+          ),
+          Recipe(
+            id: "eed6005f-f8c8-451f-98d0-4088e2b40eb6",
+            name: "Bakewell Tart",
+              description: "A classic British dessert featuring a shortcrust pastry base, a layer of raspberry jam, and a rich almond frangipane filling.",
+              ingredients: "Coming soon!",
+              directions: "Coming Soon!",
+              category: "British",
+              url: "N/A",
+              photoUrlLarge: "https://d3jbb8n5wk0qxi.cloudfront.net/photos/dd936646-8100-4a1c-b5ce-5f97adf30a42/large.jpg",
+              photoUrlSmall: "https://d3jbb8n5wk0qxi.cloudfront.net/photos/dd936646-8100-4a1c-b5ce-5f97adf30a42/small.jpg",
+              youtube_url: "https://www.youtube.com/watch?v=1ahpSTf_Pvk"
+          ),
+          Recipe(
+            id: "f8b20884-1e54-4e72-a417-dabbc8d91f12",
+            name: "Banana Pancakes",
+              description: "Soft, fluffy pancakes infused with the natural sweetness and flavor of ripe bananas.",
+              ingredients: """
+               2 cups flour
+               2 tablespoons sugar
+               4 teaspoons baking powder
+               1⁄2 teaspoon salt
+               2 eggs, beaten
+               2 cups milk
+               4 tablespoons vegetable oil
+               4 ripe bananas mashed
+               """,
+              directions: "Mix flour, sugar, baking powder, and salt. In separate bowl, mix eggs, milk, vegetable oil, and bananas. Combine. Cook on a lightly oiled pan until golden brown.",
+              category: "American",
+              url: "https://www.bbcgoodfood.com/recipes/banana-pancakes",
+              photoUrlLarge: "https://d3jbb8n5wk0qxi.cloudfront.net/photos/b6efe075-6982-4579-b8cf-013d2d1a461b/large.jpg",
+              photoUrlSmall:  "https://d3jbb8n5wk0qxi.cloudfront.net/photos/b6efe075-6982-4579-b8cf-013d2d1a461b/small.jpg",
+              youtube_url: "https://www.youtube.com/watch?v=kSKtb2Sv-_U"
+          ),
+          Recipe(
+            id: "891a474e-91cd-4996-865e-02ac5facafe3",
+            name: "Battenberg Cake",
+              description: "A British sponge cake known for its distinctive checkerboard pattern of pink and yellow squares.",
+              ingredients: """
+               175g butter
+               175g sugar
+               140g flour
+               50g ground almonds
+               3 eggs
+               vanilla extract
+               pink food coloring:
+               apricot jam
+               marzipan
+               """,
+              directions: "Preheat the oven to 180°C. Mix ingredients, bake, cool. Slice into checkerboard pattern, assemble with jam and marzipan.",
+              category: "British",
+              url: "https://www.bbcgoodfood.com/recipes/battenberg-cake",
+              photoUrlLarge: "https://d3jbb8n5wk0qxi.cloudfront.net/photos/ec1b84b1-2729-4547-99db-5e0b625c0356/large.jpg",
+              photoUrlSmall: "https://d3jbb8n5wk0qxi.cloudfront.net/photos/ec1b84b1-2729-4547-99db-5e0b625c0356/small.jpg",
+              youtube_url: "https://www.youtube.com/watch?v=aB41Q7kDZQ0"
+              ),
+            Recipe(
+                id: "b5db2c09-411e-4bdf-9a75-a194dcde311b",
+                name: "BeaverTails",
+                description: "are a popular Canadian dessert consisting of deep-fried dough stretched into the shape of a beaver's tail.",
+                ingredients: """
+               4 teaspoons yeast
+               ½ cup warm water
+               ½ cup milk warmed
+               5 tablespoons unsalted butter melted
+               ½ cup sugar plus 1 tablespoon
+               2- 4 cups all-purpose flour
+               Pinch of salt
+               Vegetable oil for frying
+               Cinnamon and sugar (to coat)
+               """,
+                directions: "Place yeast in warm water with a tablespoon of sugar. Let sit for 10 minutes until the yeast is nice and frothy. In a large bowl, add 2 cups of flour, sugar and a pinch of salt. Make a well and add eggs, warm milk, yeast mixture, and melted butter. Begin to form a dough. If the dough is wet, continue to add flour until it no longer sticks to the bowl. Knead dough on hard surface until smooth and elastic. Grease and place dough back into the bowl. Cover with a dishtowel or saran wrap and allow to rest for 1 – ½ hours or until double in size. Punch dough down and divide into 12 equal balls. 24 balls if you wish to have mini beavertails. Heat about 2 inches of oil in a large high-sided pot to 350 degrees. Roll each ball into an oval. Place in oil and cook on each side for about 30-45 seconds or until golden brown. Remove and place briefly on a paper towel to remove excess oil. Toss in cinnamon sugar and repeat with remaining balls. Enjoy.",
+                category: "Canadian",
+                url: "https://theasty.com/beaver-tail-recipe/",
+                photoUrlLarge: "https://d3jbb8n5wk0qxi.cloudfront.net/photos/3b33a385-3e55-4ea5-9d98-13e78f840299/large.jpg",
+                photoUrlSmall: "https://d3jbb8n5wk0qxi.cloudfront.net/photos/3b33a385-3e55-4ea5-9d98-13e78f840299/small.jpg",
+                youtube_url: "https://www.youtube.com/watch?v=2G07UOqU2e8"
+            ),
+            Recipe(
+                id: "8938f16a-954c-4d65-953f-fa069f3f1b0d",
+                name: "Blackberry Fool",
+                description: "is a simple, yet delicious dessert made by folding fresh or pureed blackberries into sweetened whipped cream or yogurt.",
+                ingredients: """
+                600g/1lb 5oz fresh blackberries
+                hulled, 75g/2½oz preserving sugar
+               2-3 tbsp caster sugar
+               1 tbsp fresh lemon juice
+               300ml/10fl oz double cream well chilled
+               100ml/3½fl oz plain natural yoghurt
+               fresh mint leaves to decorate
+               """,
+                directions: "For the fool, rinse the blackberries in a colander to wash away any dust or dirt. Put the blackberries in a non-stick saucepan and sprinkle over the caster sugar. Stir in the lemon juice and heat gently for two minutes, or until the blackberries begin to soften and release their juices. Remove and reserve 12 blackberries for decoration and continue cooking the rest. Simmer the blackberries very gently for 15 minutes, stirring regularly until very soft and squidgy. Remove from the heat and press the berries and juice through a sieve over a bowl, using the bottom of a ladle to help you extract as much of the purée as possible. Leave the purée to cool and discard the seeds. You should end up with around 325ml/11fl oz of purée. Put the cream and yoghurt in a large bowl and whip with an electric whisk until soft peaks form when the whisk is removed from the bowl – the acidity of the fruit will thicken the cream further, so don’t take it too far. When the purée is completely cold, adjust the sweetness to taste by adding more sugar if needed. Pour it into the bowl with the whipped cream and yoghurt and stir just once or twice until very lightly combined. Spoon the blackberry fool into individual wide, glass dishes – or one large, single bowl. It should look quite marbled, so don’t over-stir it. Scatter a few tiny mint leaves on top and decorate with the reserved blackberries. Sprinkle with a little sugar if you like and serve with the hazelnut biscuits.",
+                category: "British",
+                url: "https://www.bbc.co.uk/food/recipes/blackberry_fool_with_11859",
+                photoUrlLarge: "https://d3jbb8n5wk0qxi.cloudfront.net/photos/ff52841a-df5b-498c-b2ae-1d2e09ea658d/large.jpg",
+                photoUrlSmall: "https://d3jbb8n5wk0qxi.cloudfront.net/photos/ff52841a-df5b-498c-b2ae-1d2e09ea658d/small.jpg",
+                youtube_url: "https://www.youtube.com/watch?v=kniRGjDLFrQ"
+            ),
+            Recipe(
+                id: "02a80f95-09d6-430c-a9da-332584229d6f",
+                name: "Bread and Butter Pudding",
+                description: "is a classic British dessert made by layering slices of buttered bread (often stale or leftover) in a baking dish, then pouring a rich custard mixture over the top.",
+                ingredients: "Coming Soon",
+                directions: "Coming Soon",
+                category: "British",
+                url: "N/A",
+                photoUrlLarge: "https://d3jbb8n5wk0qxi.cloudfront.net/photos/10818213-3c03-47ae-a7b1-230baa981226/large.jpg",
+                photoUrlSmall: "https://d3jbb8n5wk0qxi.cloudfront.net/photos/10818213-3c03-47ae-a7b1-230baa981226/small.jpg",
+                youtube_url: "https://www.youtube.com/watch?v=Vz5W1-BmOE4"
+            ),
+            Recipe(
+                id: "563dbb27-5323-443c-b30c-c221ae598568",
+                name: "Budino Di Ricotta",
+                description: "is a traditional Italian dessert with a rich, creamy texture and a delicate, slightly sweet flavor.",
+                ingredients: """
+               500g ricotta
+               4 large eggs separated
+               3 tbsp flour
+               250g sugar
+               1 tsp ground cinnamon
+               Grated rind of 2 lemons
+               5 tbsp rum
+               Icing sugar
+               """,
+                directions: "Mash the ricotta and beat well with the egg yolks, stir in the flour, sugar, cinnamon, grated lemon rind and the rum and mix well. You can do this in a food processor. Beat the egg whites until stiff, fold in and pour into a buttered and floured 25cm cake tin. Bake in the oven at 180ºC/160ºC fan/gas 4 for about 40 minutes, or until it is firm.",
+                category: "Italian",
+                url: "https://thehappyfoodie.co.uk/recipes/ricotta-cake-budino-di-ricotta/",
+                photoUrlLarge: "https://d3jbb8n5wk0qxi.cloudfront.net/photos/2cac06b3-002e-4df7-bb08-e15bbc7e552d/large.jpg",
+                photoUrlSmall: "https://d3jbb8n5wk0qxi.cloudfront.net/photos/2cac06b3-002e-4df7-bb08-e15bbc7e552d/small.jpg",
+                youtube_url: "https://www.youtube.com/watch?v=6dzd6Ra6sb4"
+            ),
+            Recipe(
+                id: "39ad8233-c470-4394-b65f-2a6c3218b935",
+                name: "Canadian Butter Tarts",
+                description: "are a classic Canadian dessert featuring a flaky, buttery pastry shell filled with a rich, gooey filling made from butter, sugar, eggs, and syrup (often corn or maple syrup).",
+                ingredients: """
+               375g pack ready rolled shortcrust pastry (or 375g/13oz homemade)
+               2 large eggs
+               175g light muscovado sugar
+               100g raisins
+               1 tsp vanilla extract
+               50g butter
+               4 tbsp single cream
+               50g chopped walnuts
+               """,
+                directions: "Preheat the oven to fan 170C/ conventional 190C/gas 5. Roll out the pastry on a lightly floured surface so it’s slightly thinner than straight from the pack. Then cut out 18-20 rounds with a 7.5cm fluted cutter, re-rolling the trimmings. Use the rounds to line two deep 12-hole tart tins (not muffin tins). If you only have a regular-sized, 12-hole tart tin you will be able to make a few more slightly shallower tarts. Beat the eggs in a large bowl and combine with the rest of the ingredients except the walnuts. Tip this mixture into a pan and stir continuously for 3-4 minutes until the butter melts, and the mixture bubbles and starts to thicken. It should be thick enough to coat the back of a wooden spoon. Don’t overcook, and be sure to stir all the time as the mixture can easily burn. Remove from the heat and stir in the nuts. Spoon the filling into the unbaked tart shells so it’s level with the pastry. Bake for 15-18 minutes until set and pale golden. Leave in the tin to cool for a few minutes before lifting out on to a wire rack. Serve warm or cold.",
+                category: "Canadian",
+                url: "https://www.bbcgoodfood.com/recipes/1837/canadian-butter-tarts",
+                photoUrlLarge: "https://d3jbb8n5wk0qxi.cloudfront.net/photos/f18384e7-3da7-4714-8f09-bbfa0d2c8913/large.jpg",
+                photoUrlSmall: "https://d3jbb8n5wk0qxi.cloudfront.net/photos/f18384e7-3da7-4714-8f09-bbfa0d2c8913/small.jpg",
+                youtube_url: "https://www.youtube.com/watch?v=WUpaOGghOdo"
+            ),
+        Recipe(id: "7e529e52-f56d-49a2-938f-81aac853cc65",
+               name: "Carrot Cake",
+               description: "is a moist, spiced cake made with grated carrots, which add natural sweetness and texture.",
+               ingredients: """
+                   4 free-range eggs, at room temperature
+                   200ml/7fl oz vegetable or sunflower oil, plus a little extra for the tin
+                   250g/9oz carrots, coarsely grated
+                   100g/3½oz raisins or sultanas (optional)
+                   100g/3½oz walnut pieces, plus a few extra for decoration
+                   1 orange, zest only
+                   200g/7oz self-raising flour
+                   2 tsp mixed spice
+                   1 tsp bicarbonate of soda
+                   ¼ tsp fine salt
+                   200g/7oz light brown sugar
+               """,
+               directions: """
+                   For the carrot cake, preheat the oven to 180C/170C Fan/Gas 4. Grease and line a deep, 20cm/8in round cake tin with baking paper. Break the eggs into a large bowl, and lightly whisk using a fork. Add the vegetable oil and whisk again. Stir in the grated carrots, raisins, walnut pieces, and orange zest. In a separate large bowl, sift together the flour, mixed spice, bicarbonate of soda, and salt. Stir in the sugar. Add the wet carrot mixture to the dry ingredients and mix well to combine, making sure there are no pockets of flour. Spoon the cake batter into the lined tin and bake on the middle shelf for 1–1¼ hours, until the cake has risen and is golden-brown all over. Remove the cake from the oven and set aside in the tin to cool for 10–15 minutes, then turn the cake out and leave to cool completely on a wire rack.
+                   While the carrot cake cools, make the frosting. Place the softened butter in a large bowl with the caster sugar, beat it for 2–3 minutes until light and creamy, then stir in the cream cheese until smooth. Place the cake on a serving plate or cake stand. Use a palette knife, or flat-bladed knife, to spread the frosting over the top and sides of the cake. Scatter more walnuts on the top and serve.
+               """,
+               category: "British",
+               url: "https://www.bbc.co.uk/food/recipes/classic_carrot_cake_08513",
+               photoUrlLarge: "https://d3jbb8n5wk0qxi.cloudfront.net/photos/32afc698-d927-4a90-990f-ec25e9520c08/large.jpg",
+               photoUrlSmall: "https://d3jbb8n5wk0qxi.cloudfront.net/photos/32afc698-d927-4a90-990f-ec25e9520c08/large.jpg",
+               youtube_url: "https://www.youtube.com/watch?v=asjZ7iTrGKA"),
+
+        Recipe(id: "7eeb0865-b41c-4a3b-80dd-a69d32dccc7d",
+               name: "Cashew Ghoriba Biscuits",
+               description: "are delicate Moroccan cookies made with ground cashews, sugar, butter, and flour, resulting in a crumbly, melt-in-your-mouth texture.",
+               ingredients: "Coming Soon!",
+               directions: "Coming Soon!",
+               category: "Tunisian",
+               url: "N/A",
+               photoUrlLarge: "https://d3jbb8n5wk0qxi.cloudfront.net/photos/9c7fa988-1bbe-4bed-9f1a-c9d4d8b311da/large.jpg",
+               photoUrlSmall: "https://d3jbb8n5wk0qxi.cloudfront.net/photos/9c7fa988-1bbe-4bed-9f1a-c9d4d8b311da/small.jpg",
+               youtube_url: "https://www.youtube.com/watch?v=IqXEZUk4hWI"),
+
+        Recipe(id: "7fc217a9-5566-4bf1-b1ce-13bc9e3f2b1a",
+               name: "Chelsea Buns",
+               description: "are sweet, sticky, and spiced rolls made from enriched yeast dough, filled with dried fruit (such as currants, raisins, or sultanas), brown sugar, and cinnamon.",
+               ingredients: """
+                   500g/1lb strong white flour, plus extra for dusting
+                   1tsp salt
+                   1 x 7g/¼oz sachet fact-action dried yeast
+                   300ml/10fl oz milk
+                   40g/1½oz unsalted butter, softened at room temperature
+                   1 free-range egg
+                   vegetable oil, for greasing
+                   For the filling:
+                   25g/1oz unsalted butter, melted
+                   75g/3oz soft brown sugar
+                   2 tsp ground cinnamon
+                   150g/5oz dried mixed fruit
+                   For the glaze:
+                   2 tbsp milk
+                   2 tbsp caster sugar
+               """,
+               directions: """
+                   Sift the flour and salt into a large bowl. Make a well in the middle and add the yeast. Meanwhile, warm the milk and butter in a saucepan until the butter melts and the mixture is lukewarm. Add the milk mixture and egg to the flour mixture and stir until the contents of the bowl come together as a soft dough. (You may need to add a little extra flour.) Tip the dough onto a generously floured work surface. Knead for five minutes, adding more flour if necessary, until the dough is smooth and elastic and no longer feels sticky. Lightly oil a bowl with a little of the vegetable oil. Place the dough into the bowl and turn until it is covered in the oil. Cover the bowl with cling film and set aside in a warm place for one hour, or until the dough has doubled in size. Lightly grease a baking tray. For the filling, knock the dough back to its original size and turn out onto a lightly floured work surface. Roll the dough out into a rectangle 0.5cm/¼in thick. Brush all over with the melted butter, then sprinkle over the brown sugar, cinnamon, and "7fc217a9-5566-4bf1-b1ce-13bc9e3f2b1a"dried fruit. Roll the dough up into a tight cylinder, cut ten 4cm/1½in slices, and place them onto a lightly greased baking sheet, leaving a little space between each slice. Cover with a tea towel and set aside to rise for 30 minutes. Preheat oven to 190C/375F/Gas 5. Bake the buns in the oven for 20-25 minutes, or until risen and golden-brown. Meanwhile, for the glaze, heat the milk and sugar in a saucepan until boiling. Reduce the heat and simmer for 2-3 minutes. Remove the buns from the oven and brush with the glaze, then set aside to cool on a wire rack.
+               """,
+               category: "British",
+               url: "https://www.bbc.co.uk/food/recipes/chelsea_buns_95015",
+               photoUrlLarge: "https://d3jbb8n5wk0qxi.cloudfront.net/photos/4aecd46e-e419-49ec-8888-246b3cc0cc94/large.jpg",
+               photoUrlSmall: "https://d3jbb8n5wk0qxi.cloudfront.net/photos/4aecd46e-e419-49ec-8888-246b3cc0cc94/small.jpg",
+               youtube_url: "https://www.youtube.com/watch?v=i_zemP3yBKw"),
+
+        Recipe(id: "6377de22-4ec2-44c4-9e76-260be2e4fd90",
+               name: "Chinon Apple Tarts",
+               description: "are elegant French pastries originating from the Chinon region.",
+               ingredients: """
+                   320g pack ready-rolled all-butter puff pastry
+                   4 tbsp light brown soft sugar
+                   2-3 eating apples (I used Pink Lady)
+                   3 tbsp red wine jelly
+               """,
+               directions: """
+                   To make the red wine jelly, put the red wine, jam sugar, star anise, clove, cinnamon stick, allspice, split vanilla pod, and seeds in a medium saucepan. Stir together, then heat gently to dissolve the sugar. Turn up the heat and boil for 20 minutes until reduced and syrupy. Strain into a small, sterilized jam jar and leave to cool completely. Will keep in the fridge for up to 1 month. Take the pastry out of the fridge and leave at room temperature for 10 minutes, then unroll. Heat the grill to high and heat the oven to 180C/160C fan/gas 4. Cut out 2 x 13cm circles of pastry, using a plate as a guide, and place on a non-stick baking sheet. Sprinkle each circle with 1 tbsp sugar and grill for 5 minutes to caramelize, watching carefully so that the sugar doesn’t burn. Remove from the grill. Peel, quarter, and core the apples, cut into 2mm-thin slices and arrange on top of the pastry. Sprinkle over the remaining sugar and pop in the oven for 20-25 minutes until the pastry is cooked through and golden, and the apples are softened. Remove and allow to cool slightly. Warm 3 tbsp of the red wine jelly in a small pan over a low heat with 1 tsp water to make it a little more runny, then brush over the top of the tarts. Tip the crème fraîche into a bowl, sift over the icing sugar and cardamom, and mix together. Carefully lift the warm tarts onto serving plates and serve with the cardamom crème fraîche.
+               """,
+               category: "French",
+               url: "https://www.bbcgoodfood.com/recipes/chinon-apple-tarts",
+               photoUrlLarge: "https://d3jbb8n5wk0qxi.cloudfront.net/photos/ec155176-ebb3-4e83-a320-c5c1d8d0c559/large.jpg",
+               photoUrlSmall: "https://d3jbb8n5wk0qxi.cloudfront.net/photos/ec155176-ebb3-4e83-a320-c5c1d8d0c559/small.jpg",
+               youtube_url: "https://www.youtube.com/watch?v=5dAW9HQgtCk"),
+
+        Recipe(id: "6a3f96c1-02db-412a-ab7c-bb69b1bb4a8a",
+               name: "Choc Chip Pecan Pie",
+               description: "is a rich, indulgent dessert that combines the classic flavors of pecan pie with gooey chocolate chips.",
+               ingredients: """
+                   300g plain flour
+                   75g salted butter, cubed
+                   100g cream cheese
+                   1 tbsp icing sugar
+                   For the filling:
+                   150g salted butter
+                   200ml maple syrup
+                   250g light brown soft sugar
+                   100g dark brown soft sugar
+                   4 eggs, beaten
+                   1 tsp vanilla extract
+                   400g pecans, finely chopped
+                   200g dark chocolate chips or a bar, chopped
+               """,
+               directions: """
+                   First, make the pastry. Tip the ingredients into a food processor with ¼ tsp salt. Blend until the mixture resembles breadcrumbs. Drizzle 2-3 tsp cold water into the funnel while the blade is running – the mixture should start to clump together. Tip onto a work surface and bring together, kneading briefly into a ball. Pat into a disc, wrap in cling film, and chill for at least 20 minutes. Heat the oven to 200C/180C fan/gas 6. Remove the pastry from the fridge and leave at room temperature for 5 minutes to soften. Flour the work surface, then unwrap the pastry and roll it to a circle the thickness of a £1 coin. Use the pastry to line a deep, 23cm round fluted tin. Press the pastry into the corners and up the sides, making sure there are no gaps. Leave 1cm pastry overhanging. Line with baking parchment (scrunch it up first) and fill with baking beans. Blind-bake for 15-20 minutes until the sides are set, then remove the parchment and beans and return to the oven for 5 minutes until golden brown. Trim the pastry so it’s flush with the top of the tin. If there are any cracks, patch them up with the pastry scraps.
+                   Meanwhile, weigh the butter, syrup, and sugars into a pan, and add ¼ tsp salt. Heat until the butter has melted and the sugar dissolved. Remove from the heat and cool for 10 minutes. Reduce oven to 160C/140C fan/gas 3. Beat the eggs in a bowl. Add the syrup mixture, vanilla, and pecans, and mix until well combined. Pour half the mixture into the tart case, scatter over half the chocolate chips, then cover with the remaining filling and chocolate chips. Bake for 50-55 minutes until set. Remove from the oven and leave to cool, then chill for at least 2 hours before serving.
+               """,
+               category: "American",
+               url: "https://www.bbcgoodfood.com/recipes/choc-chip-pecan-pie",
+               photoUrlLarge: "https://d3jbb8n5wk0qxi.cloudfront.net/photos/54462bd7-afc2-43aa-a10e-3ddd0a829954/large.jpg",
+               photoUrlSmall: "https://d3jbb8n5wk0qxi.cloudfront.net/photos/54462bd7-afc2-43aa-a10e-3ddd0a829954/small.jpg",
+               youtube_url: "https://www.youtube.com/watch?v=fDpoT0jvg4Y"),
+
+        Recipe(id: "b07b8b92-64c9-4322-ab15-e628a1b8fcbc",
+               name: "Chocolate Avocado Mousse",
+               description: "is a rich, creamy, and healthier alternative to traditional chocolate mousse, made by blending ripe avocados with cocoa powder, sweetener (like honey or maple syrup), vanilla extract, and a splash of milk or dairy-free alternative.",
+               ingredients: "Coming Soon!",
+               directions: "Coming Soon!",
+               category: "British",
+               url: "N/A",
+               photoUrlLarge: "https://d3jbb8n5wk0qxi.cloudfront.net/photos/27c50c00-148e-4d2a-abb7-942182bb6d94/large.jpg",
+               photoUrlSmall: "https://d3jbb8n5wk0qxi.cloudfront.net/photos/27c50c00-148e-4d2a-abb7-942182bb6d94/small.jpg",
+               youtube_url: "https://www.youtube.com/watch?v=wuZffe60q4M"),
+        Recipe(id: "1bf34a8c-4579-479f-91e0-6eed354f6b2c",
+               name: "Chocolate Caramel Crispy",
+                   description: "is a delicious, no-bake treat made with crispy rice cereal coated in a rich layer of caramel and chocolate.",
+                   ingredients: """
+                   6 mars bars roughly chopped
+                    150g butter cubed
+                   120g rice krispies
+                   150g milk chocolate
+                   """,
+                   directions: "Grease and line a 20 x 20cm/8 x 8 baking tin with parchment paper. Put the mars bars and butter in a heat proof bowl and place over a pan of barely simmering water. Mixing with a whisk, melt until the mixture is smooth. Pour over the rice krispies in a mixing bowl and mix until all the ingredients are evenly combined. Press evenly into the prepare baking tin and set aside. Melt the milk chocolate in the microwave or over a pan of barely simmering water. Spread the melted chocolate over the rice krispie mixture and leave to set in a cool place. Once set slice into squares and serve!",
+                   category: "British",
+                   url: "https://d3jbb8n5wk0qxi.cloudfront.net/photos/1c1616f6-81d2-447d-a1ae-51352edfde0c/small.jpg",
+                   photoUrlLarge: "https://d3jbb8n5wk0qxi.cloudfront.net/photos/1c1616f6-81d2-447d-a1ae-51352edfde0c/large.jpg",
+                   photoUrlSmall: "https://d3jbb8n5wk0qxi.cloudfront.net/photos/1c1616f6-81d2-447d-a1ae-51352edfde0c/small.jpg",
+                   youtube_url: "https://www.youtube.com/watch?v=qsk_At_gjv0"),
+        Recipe(id: "7e9fc2d3-9759-46ee-976e-d6ca0f682091",
+               name: "French",
+                   description: "is a rich and elegant French chocolate cake known for its moist, dense texture and deep chocolate flavor.",
+                   ingredients: """
+               250g plain chocolate
+               175g butter softened
+               175g caster sugar
+               5 eggs beaten
+               125g self raising flour
+               2 tbsp brandy or milk
+               """,
+                   directions: "Preheat the oven to 180°C/350°F/Gas Mark 4. Grease and line the base of an 8-inch round spring form cake tin with baking parchment. Break the chocolate into a heatproof bowl and place over a saucepan of gently simmering water and stir until it melts (or melt in the microwave for 2-3 mins stirring occasionally). Place the butter and sugar in a mixing bowl and cream together with a wooden spoon until light and fluffy. Gradually beat in the eggs, adding a little flour if the mixture begins to curdle. Fold in the remaining flour with the cooled, melted chocolate and brandy or milk. Mix until smooth. Spread the mixture into the cake tin and bake for 50-55 mins or until firm in the centre and a skewer comes out cleanly. Cool for 10 minutes, then turn out and cool completely. Make the icing: break the chocolate into a heatproof bowl and place over a saucepan of gently simmering water and stir until it melts (or melt in the microwave for 2-3 mins stirring occasionally). Remove from the heat and stir in the butter and cream until smooth. Pour over the top and sides of the cake, smoothing it evenly down over the sides of the cake. Decorate with chocolate shavings or curls.",
+                   category: "French",
+                   url: "https://www.goodto.com/recipes/chocolate-gateau",
+                   photoUrlLarge: "https://d3jbb8n5wk0qxi.cloudfront.net/photos/bfc6bc1d-3e24-4f9e-a496-bd4f3f002539/large.jpg",
+                   photoUrlSmall: "https://d3jbb8n5wk0qxi.cloudfront.net/photos/bfc6bc1d-3e24-4f9e-a496-bd4f3f002539/small.jpg",
+                   youtube_url: "https://www.youtube.com/watch?v=dsJtgmAhFF4"),
+        Recipe(id: "606f22ce-fcd1-434e-a6da-9571c0b2fc9b",
+               name: "Chocolate Raspberry Brownies",
+                   description: "are a decadent twist on classic brownies, combining the rich, fudgy texture of chocolate brownies with the tart, refreshing flavor of fresh raspberries.",
+                   ingredients: """
+               200g dark chocolate broken into chunks
+               100g milk chocolate broken into chunks
+               250g pack salted butter
+               400g soft light brown sugar
+               4 large eggs, 140g plain flour
+               50g cocoa powder
+               200g raspberries
+               """,
+                   directions: "Heat oven to 180C/160C fan/gas 4. Line a 20 x 30cm baking tray tin with baking parchment. Put the chocolate, butter and sugar in a pan and gently melt, stirring occasionally with a wooden spoon. Remove from the heat. Stir the eggs, one by one, into the melted chocolate mixture. Sieve over the flour and cocoa, and stir in. Stir in half the raspberries, scrape into the tray, then scatter over the remaining raspberries. Bake on the middle shelf for 30 mins or, if you prefer a firmer texture, for 5 mins more. Cool before slicing into squares. Store in an airtight container for up to 3 days.",
+                   category: "American",
+                   url: "https://www.bbcgoodfood.com/recipes/2121648/bestever-chocolate-raspberry-brownies",
+                   photoUrlLarge: "https://d3jbb8n5wk0qxi.cloudfront.net/photos/74aa9345-00ae-4178-9aa7-8fcee19af160/large.jpg",
+                   photoUrlSmall: "https://d3jbb8n5wk0qxi.cloudfront.net/photos/74aa9345-00ae-4178-9aa7-8fcee19af160/small.jpg",
+                   youtube_url: "https://www.youtube.com/watch?v=Pi89PqsAaAg"),
+        Recipe(id: "003cd03a-6e93-48ba-aa3d-0f53f40569ad",
+               name: "Chocolate Souffle",
+                   description: "is a luxurious, light, and airy dessert made with a rich chocolate base and whipped egg whites.",
+                   ingredients: """
+               melted butter for the ramekins
+               50g caster sugar
+               plus 2 tbsp extra
+               175g dark chocolate(70% cocoa) broken into pieces
+               2 tbsp double cream
+               4 egg yolks
+               5 egg whites
+               2tbsp icing sugar to serve
+               """,
+                   directions: "Heat the oven to 220C/fan 200C/gas 7 and place a baking tray on the top shelf. For the sauce, heat the cream and sugar until boiling. Remove from the heat, stir in the chocolate and butter until melted, then keep warm. Brush six 150ml ramekins with melted butter, sprinkle with the 2 tbsp caster sugar, then tip out any excess. Melt the chocolate and cream in a bowl over a pan of simmering water, cool, then mix in the egg yolks. Whisk the egg whites until they hold their shape, then add the sugar, 1 tbsp at a time, whisking back to the same consistency. Mix a spoonful into the chocolate, then gently fold in the rest. Working quickly, fill the ramekins, wipe the rims clean and run your thumb around the edges. Turn oven down to 200C/fan 180C/gas 6, place the ramekins onto the baking tray, then bake for 8-10 mins until risen with a slight wobble. Don’t open the oven door too early as this may make them collapse. Once the soufflés are ready, dust with icing sugar, scoop a small hole from their tops, then pour in some of the hot chocolate sauce. Replace the lids and serve straightaway.",
+                   category: "French",
+                   url: "https://www.bbcgoodfood.com/recipes/hot-chocolate-souffles-chocolate-cream-sauce",
+                   photoUrlLarge: "https://d3jbb8n5wk0qxi.cloudfront.net/photos/76c7f8a1-9676-4cba-be3e-91bd53592d27/large.jpg",
+                   photoUrlSmall: "https://d3jbb8n5wk0qxi.cloudfront.net/photos/76c7f8a1-9676-4cba-be3e-91bd53592d27/small.jpg",
+                   youtube_url: "https://www.youtube.com/watch?v=FWqfkUEWOTg"),
+        Recipe(id: "a4139f76-e677-4092-ba69-5d4c5134d9d8",
+               name: "Christmas Pudding Flapjack",
+               description: "is a festive twist on the classic oat-based flapjack, infused with the rich flavors of traditional Christmas pudding.",
+               ingredients: "Coming Soon!",
+               directions: "Coming Soon!",
+               category: "British",
+               url: "N/A",
+               photoUrlLarge: "https://d3jbb8n5wk0qxi.cloudfront.net/photos/ed302719-f455-4109-948d-839f690a9ea8/large.jpg",
+               photoUrlSmall: "https://d3jbb8n5wk0qxi.cloudfront.net/photos/ed302719-f455-4109-948d-839f690a9ea8/small.jpg",
+               youtube_url: "https://www.youtube.com/watch?v=OaqvGvEiwzU"),
+
+        Recipe(id: "e48c39c5-793d-491a-9c29-9417dc5e7e1c",
+               name: "Christmas Pudding Trifle",
+               description: "is a festive, layered dessert that combines the traditional flavors of Christmas pudding with the creamy richness of a trifle.",
+               ingredients: """
+               3 oranges
+               1 tbsp demerara sugar
+               2 tbsp Grand Marnier
+               300g leftover Christmas pudding
+               500g pot custard
+               250g pot mascarpone
+               284ml pot double cream
+               To serve: 
+               handful flaked almonds toasted
+               dark chocolate grated
+               """,
+               directions: "Peel the oranges using a sharp knife, ensuring all the pith is removed. Slice as thinly as possible and arrange over a dinner plate. Sprinkle with the demerara sugar followed by the Grand Marnier and set aside. Crumble the Christmas pudding into large pieces and scatter over the bottom of a trifle bowl. Lift the oranges onto the pudding in a layer and pour over any juices. Beat the mascarpone until smooth, then stir in the custard. Spoon the mixture over the top of the oranges. Lightly whip the cream and spoon over the custard. Sprinkle with the flaked almonds and grated chocolate. You can make this a day in advance if you like, chill until ready to serve.",
+               category: "British",
+               url: "https://www.bbcgoodfood.com/recipes/christmas-pudding-trifle",
+               photoUrlLarge: "https://d3jbb8n5wk0qxi.cloudfront.net/photos/f59ddd71-4730-4531-bbec-3d382e3b2175/large.jpg",
+               photoUrlSmall: "https://d3jbb8n5wk0qxi.cloudfront.net/photos/f59ddd71-4730-4531-bbec-3d382e3b2175/small.jpg",
+               youtube_url: "https://www.youtube.com/watch?v=jRfyNQs5qhU"),
+
+        Recipe(id: "088ac6dc-9804-483d-aa2e-845263daf90a",
+               name: "Christmas Cake",
+               description: "is a rich, festive fruitcake traditionally made to celebrate the holiday season.",
+               ingredients: """
+               200g butter softened to room temperature
+               200g dark muscovado sugar
+               200g plain flour
+               4 eggs beaten
+               50g ground almond
+               100ml sherry sweet or dry or whatever you have in the cupboard
+               85g candied peel roughly chopped (we used Sundora)
+               85g glacé cherry roughly chopped
+               250g raisin
+               250g currant
+               100g pack pecan nuts broken into big pieces
+               finely grated zest 1 lemon
+               1½ tsp mixed spice
+               1½ tsp rosewater
+               ½ tsp vanilla extract
+               ½ tsp baking powder
+               """,
+               directions: "Heat oven to 160C/fan 140C/gas 3. Line the base and sides of a 20 cm round, 7.5 cm deep cake tin. Beat the butter and sugar with an electric hand mixer for 1-2 mins until very creamy and pale in colour, scraping down the sides of the bowl half way through. Stir in a spoonful of the flour, then stir in the beaten egg and the rest of the flour alternately, a quarter at a time, beating well each time with a wooden spoon. Stir in the almonds. Mix in the sherry (the mix will look curdled), then add the peel, cherries, raisins, cherries, nuts, lemon zest, spice, rosewater and vanilla. Beat together to mix, then stir in the baking powder. Spoon mixture into the tin and smooth the top, making a slight dip in the centre. Bake for 30 mins, then lower temperature to 150C/fan 130C/gas 2 and bake a further 2-2¼ hrs, until a skewer inserted in the middle comes out clean. Leave to cool in the tin, then take out of the tin and peel off the lining paper. When completely cold, wrap well in cling film and foil to store until ready to decorate. The cake will keep for several months.",
+               category: "British",
+               url: "https://www.bbcgoodfood.com/recipes/angela-nilsens-christmas-cake",
+               photoUrlLarge: "https://d3jbb8n5wk0qxi.cloudfront.net/photos/aaa5dab0-febe-4fc4-800d-36e293764f98/large.jpg",
+               photoUrlSmall: "https://d3jbb8n5wk0qxi.cloudfront.net/photos/aaa5dab0-febe-4fc4-800d-36e293764f98/small.jpg",
+               youtube_url: "https://www.youtube.com/watch?v=34yeL8TstO0"),
+
+        Recipe(id: "d603f36e-7aae-4a51-a96a-6711f582de19",
+               name: "Classic Christmas Pudding",
+               description: "is a rich, moist, and flavorful dessert traditionally served during the holiday season.",
+               ingredients: """
+               50g blanched almonds
+               2 large Bramley cooking apples
+               200g box candied peel (in large pieces) or all citron if you can find it
+               1 whole nutmeg (you'll use three quarters of it), 1kg raisins
+               140g plain flour, 100g soft fresh white breadcrumbs
+               100g light muscovado sugar crumbled if it looks lumpy
+               3 large eggs
+               2 tbsp brandy or cognac plus extra to light the pudding
+               250g packet butter taken straight from the fridge
+               For the brandy and ginger butter:
+               175g unsalted butter softened
+               grated zest of half an orange
+               5 tbsp icing sugar
+               4 tbsp brandy or cognac
+               2 pieces of stem ginger finely chopped
+               """,
+               directions: "Get everything ready for the pudding! Coarsely chop almonds, peel and core apples, and chop candied peel. Grate most of the nutmeg. Mix almonds, apples, candied peel, nutmeg, raisins, flour, breadcrumbs, light muscovado sugar, eggs, and brandy or cognac in a bowl. Grate butter into the mixture, stirring until it's smooth. Ask everyone to make a wish while stirring. Butter two 1.2-litre bowls and line with baking parchment. Pack the pudding mix in and cover with two layers of parchment, tying with string. Wrap in foil for a watertight seal, creating a handle for easy lifting. Boil or steam for 8 hours, topping up water as needed. Let cool overnight and store for Christmas. For brandy butter: cream butter with orange zest and icing sugar, then beat in brandy and chopped ginger. Chill until set. On Christmas Day, steam for 1 hour, unwrap, and flame with warmed brandy. Enjoy the festive treat!",
+               category: "British",
+               url: "https://www.bbcgoodfood.com/recipes/classic-christmas-pudding",
+               photoUrlLarge: "https://d3jbb8n5wk0qxi.cloudfront.net/photos/604d020a-967a-40e1-97d2-561de5c66807/large.jpg",
+               photoUrlSmall: "https://d3jbb8n5wk0qxi.cloudfront.net/photos/604d020a-967a-40e1-97d2-561de5c66807/small.jpg",
+               youtube_url: "https://www.youtube.com/watch?v=Pb_lJxL1vtk"),
+
+        Recipe(id: "6b628dfc-5473-4924-b80c-5718cdae8b2a",
+               name: "Dundee Cake",
+               description: "is a traditional Scottish fruitcake, known for its rich, moist texture and distinctive appearance.",
+               ingredients: """
+               100g blanched almonds
+               180g unsalted butter at room temperature
+               180g light muscovado sugar
+               zest 1 large orange
+               3 tbsp apricot jam or marmalade
+               225g plain flour
+               1 tsp baking powder
+               3 large eggs beaten
+               100g ground almonds
+               2 tbsp milk
+               500g mixed dried fruit
+               100g whole glacé cherry Glaze
+               1 tbsp milk
+               2 tsp caster sugar
+               """,
+               directions: "To make the cake, soak the almonds in boiling water for 5 minutes, then drain and dry. Preheat the oven to 180°C (160°C fan). Grease a 20cm cake tin with baking parchment. Beat butter and sugar until fluffy, then mix in orange zest and apricot jam. Add flour, baking powder, and eggs, a little at a time, beating well. Stir in milk, ground almonds, and dried fruit. Spoon the mixture into the tin, arrange whole almonds on top, and bake for 45 minutes. Lower the temperature to 160°C and bake for another 60-80 minutes, checking with a skewer. Heat milk and sugar, brush over the cake, and bake for 2-3 more minutes. Let the cake cool, then wrap it in foil and leave for at least 2 days before serving.",
+               category: "British",
+               url: "https://www.bbcgoodfood.com/recipes/dundee-cake",
+               photoUrlLarge: "https://d3jbb8n5wk0qxi.cloudfront.net/photos/ce3a9a6d-63ed-42c2-8032-f5a32028952f/large.jpg",
+               photoUrlSmall: "https://d3jbb8n5wk0qxi.cloudfront.net/photos/ce3a9a6d-63ed-42c2-8032-f5a32028952f/small.jpg",
+               youtube_url: "https://www.youtube.com/watch?v=Iu82Lt9ZtY4"),
+        Recipe(id: "265454f1-d1a6-470c-bc20-1d9ba73c8073",
+               name: "Eccles Cakes",
+               description: "are a delicious British pastry originating from the town of Eccles, in Greater Manchester",
+               ingredients: """
+               250g block cold butter
+               350g plain flour
+               juice ½ lemon
+               For the filling: 
+               25g butter
+               200g currants
+               50g mixed chopped peel
+               100g light muscovado sugar
+               1 tsp each of cinnamon ginger and ground allspice
+               zest of 1 lemon and 1 orange
+               plus a few tbsp of orange juice
+               To glaze:
+               1 egg white lightly beaten
+               lightly crushed La Perruche sugar cubes (available at Waitrose, delis or online) or 3 tbsp preserving sugar
+               """,
+               directions: "To make the pastry, chill the diced butter, then pulse it with flour in a food processor until breadcrumb-like. Add lemon juice and iced water, then pulse to form dough. Add the rest of the butter and pulse until flecked. Roll out the dough into a rectangle, fold in the sides, then halve and roll out again. Repeat the folding and resting process, then chill for 30 minutes. For the filling, melt butter in a saucepan, then stir in the other ingredients and set aside. Roll the pastry to £1 coin thickness and cut 8 rounds. Spoon filling onto each round, seal, and flatten. Place on a tray, cut slits, brush with egg white, and sprinkle sugar. Heat the oven to 220°C and bake for 15-20 minutes until golden. Cool on a rack and enjoy warm or cold with tea, or serve with tangy British cheese.",
+               category: "British",
+               url: "https://www.bbcgoodfood.com/recipes/eccles-cakes-0",
+               photoUrlLarge: "https://d3jbb8n5wk0qxi.cloudfront.net/photos/a6c39bad-bc6a-41c6-8588-2c97327a46cd/large.jpg",
+               photoUrlSmall: "https://d3jbb8n5wk0qxi.cloudfront.net/photos/a6c39bad-bc6a-41c6-8588-2c97327a46cd/small.jpg",
+               youtube_url: "https://www.youtube.com/watch?v=xV0QCJ0GD5w"),
+
+        Recipe(id: "1a86ef7d-a9f1-44c1-a4a0-2278f5916d49",
+               name: "Eton Mess",
+               description: "is a simple, classic British dessert made from a delicious combination of crushed meringue, fresh strawberries, and whipped cream.",
+               ingredients: "Coming Soon!",
+               directions: "Coming Soon!",
+               category: "British",
+               url: "N/A",
+               photoUrlLarge: "https://d3jbb8n5wk0qxi.cloudfront.net/photos/258262f1-57dc-4895-8856-bf95aee43054/large.jpg",
+               photoUrlSmall: "https://d3jbb8n5wk0qxi.cloudfront.net/photos/258262f1-57dc-4895-8856-bf95aee43054/small.jpg",
+               youtube_url: "https://www.youtube.com/watch?v=43WgiNq54L8"),
+
+        Recipe(id: "98c27533-a823-426d-8639-a2b334ec659a",
+               name: "Honey Yogurt Cheesecake",
+               description: "is a lighter, creamy twist on the classic cheesecake.",
+               ingredients: """
+               100g amaretti biscuits (or ginger or digestive biscuits)
+               85g toasted, flaked almonds
+               85g butter melted
+               250ml Greek yogurt
+               750g mascarpone
+               2 eggs
+               zest 1 lemon
+               zest 1 orange
+               250ml honey (orange blossom is particularly good)
+               """,
+               directions: "Heat oven to 160C/140C fan/gas 3. Crush the biscuits and most of the almonds inside a plastic food bag using a rolling pin. Mix with the butter, then press into the bottom of a deep, oval, 23cm dish (or something similar in size – a roasting tin, baking dish or cake tin will work). Bake for 10 mins until crisp. Stir or mash together the yogurt and mascarpone, then whisk in the eggs, one at a time. Stir in the lemon and orange zests, then stir in most of the honey, reserving about 3 tbsp. Spread over the biscuit base, cover loosely with foil and cook for 1 hr. Remove the foil and cook for 15 mins more until lightly golden and the top is firm with just the slightest wobble in the middle. Leave to cool. Can be kept in the fridge for up to 2 days. To serve, scatter with almonds, drizzle over the remaining honey, and hand around fresh fruit to go with it.",
+               category: "Greek",
+               url: "https://www.bbcgoodfood.com/recipes/honey-yogurt-cheesecake",
+               photoUrlLarge: "https://d3jbb8n5wk0qxi.cloudfront.net/photos/70785def-8f3c-4bc6-b5bd-77053fa8d701/large.jpg",
+               photoUrlSmall: "https://d3jbb8n5wk0qxi.cloudfront.net/photos/70785def-8f3c-4bc6-b5bd-77053fa8d701/small.jpg",
+               youtube_url: "https://www.youtube.com/watch?v=JE8crtueXs8"),
+
+        Recipe(id: "a43f53ea-4d06-46c1-bd20-5d8e487ea52b",
+               name: "Hot Chocolate Fudge",
+               description: "is a decadent, rich dessert that combines the smoothness of chocolate with the comforting flavors of hot cocoa.",
+               ingredients: "Coming Soon!",
+               directions: "Coming Soon!",
+               category: "American",
+               url: "N/A",
+               photoUrlLarge: "https://d3jbb8n5wk0qxi.cloudfront.net/photos/6d8e878b-0ca8-4173-94b7-60a006b676d6/large.jpg",
+               photoUrlSmall: "https://d3jbb8n5wk0qxi.cloudfront.net/photos/6d8e878b-0ca8-4173-94b7-60a006b676d6/small.jpg",
+               youtube_url: "https://www.youtube.com/watch?v=oJvbsVSblfk"),
+
+        Recipe(id: "338c1c7b-656a-4166-8a17-a7f99c6119e2",
+               name: "Jam Roly-Poly",
+               description: "is a classic British pudding made from a suet pastry rolled up with a generous layer of sweet fruit jam, usually raspberry or strawberry.",
+               ingredients: """
+               50g salted butter
+               cold and cut into chunks plus extra for greasing
+               250g self-raising flour, plus extra for rolling
+               1 vanilla pod seeds scraped out
+               50g shredded suet
+               150ml milk plus a drop more if needed
+               100g/4oz raspberry or plum jam or a mixture custard
+               """,
+               directions: "Put a deep roasting tin onto the bottom shelf of the oven, and make sure that there’s another shelf directly above it. Pull the roasting tin out on its shelf, fill two-thirds with boiling water from the kettle, then carefully slide it back in. Heat oven to 180C/160C fan/gas 4. Tear off a large sheet of foil and greaseproof paper (about 30 x 40cm). Sit the greaseproof on top of the foil and butter it. Tip butter, flour and vanilla seeds into a food processor; pulse until the butter has disappeared. Tip into a mixing bowl. Stir through the suet, pour in the milk and work together with a cutlery knife until you get a sticky dough. You may need a drop more milk, depending on your flour. Tip the dough out onto a floured surface, quickly pat together to smooth, then roll out to a square roughly 25 x 25cm. Spread the jam all over, leaving a gap along one edge, then roll up from the opposite edge. Pinch the jam-free edge into the dough where it meets, and pinch the ends roughly, too. Carefully lift onto the greased paper, join-side down (you might find a flat baking sheet helpful for this), loosely bring up the paper and foil around it, then scrunch together along the edges and ends to seal. The roly-poly will puff quite a bit during cooking so don’t wrap it tightly. Lift the parcel directly onto the rack above the tin and cook for 1 hr. Let the pudding sit for 5 mins before unwrapping, then carefully open the foil and paper, and thickly slice to serve.",
+               category: "British",
+               url: "https://www.bbcgoodfood.com/recipes/jam-roly-poly",
+               photoUrlLarge: "https://d3jbb8n5wk0qxi.cloudfront.net/photos/5460345d-4057-4ffe-a4ee-0ba9a8b91ed6/large.jpg",
+               photoUrlSmall: "https://d3jbb8n5wk0qxi.cloudfront.net/photos/5460345d-4057-4ffe-a4ee-0ba9a8b91ed6/small.jpg",
+               youtube_url: "https://www.youtube.com/watch?v=5ZYWVQ8imVA"),
+        Recipe(id:  "303ce395-af37-4cff-87b4-09c75a4e07ed",
+               name: "Key Lime Pie",
+                   description: "is a tangy and creamy dessert made with a zesty lime filling set in a crisp, buttery graham cracker crust.",
+                   ingredients: "300g oatmeal biscuits, 110g butter melted, 1 x 397g can condensed milk (we used Nestlé), 3 medium egg yolks finely grated zest and juice of 4 limes, 300ml double cream, 1 tbsp icing sugar, extra lime zest to decorate",
+                   directions: "Heat the oven to 160C/fan 140C/gas 3. Whizz 300g oatmeal biscuits to crumbs in a food processor (or put in a strong plastic bag and bash with a rolling pin). Mix with 110g melted butter and press into the base and up the sides of a 22cm loose-based tart tin. Bake in the oven for 10 minutes. Remove and cool. Put 3 medium egg yolks in a large bowl and whisk for a minute with electric beaters. Add a can of condensed milk and whisk for 3 minutes, then add the finely grated zest and juice of 4 limes and whisk again for 3 minutes. Pour the filling into the cooled base then put back in the oven for 15 minutes. Cool then chill for at least 6 hours or overnight if you like. When you are ready to serve, carefully remove the pie from the tin and put on a serving plate. To decorate, softly whip together 300ml double cream and 1 tbsp icing sugar. Dollop or pipe the cream onto the top of the pie and finish with extra lime zest.",
+                   category: "American",
+                   url: "https://www.bbcgoodfood.com/recipes/key-lime-pie-1",
+                   photoUrlLarge: "https://d3jbb8n5wk0qxi.cloudfront.net/photos/d23ad009-8f17-428f-a41f-5f3b5bc51883/large.jpg",
+                   photoUrlSmall: "https://d3jbb8n5wk0qxi.cloudfront.net/photos/d23ad009-8f17-428f-a41f-5f3b5bc51883/small.jpg",
+                   youtube_url: "https://www.youtube.com/watch?v=q4Rz7tUkX9A"),
+
+        Recipe(id: "9e230f96-f93d-4d29-9230-a1f5fd539464",
+               name: "Krispy Kreme Donut",
+                   description: "are soft, light, and melt-in-your-mouth treats known for their signature sweetness and fluffy texture.",
+                   ingredients: """
+               2 (1/4 ounce) packages yeast
+               1/4 cup water (105-115)
+               1 1/2 cups lukewarm milk (scalded, then cooled)
+               1/2 cup sugar, 1 teaspoon salt
+               2 eggs, 1/3 cup shortening
+               5 cups all-purpose flour
+               canola oil
+               1/3 cup butter
+               2 cups powdered sugar
+               1 1/2 teaspoons vanilla
+               4 -6 tablespoons hot water
+               """,
+                   directions: "Dissolve yeast in warm water in 2 1/2-quart bowl. Add milk, sugar, salt, eggs, shortening and 2 cups flour. Beat on low for 30 seconds, scraping bowl constantly. Beat on medium speed for 2 minutes, scraping bowl occasionally. Stir in remaining flour until smooth. Cover and let rise until double, 50-60 minutes. (Dough is ready when indentation remains when touched.) Turn dough onto floured surface; roll around lightly to coat with flour. Gently roll dough 1/2-inch thick with floured rolling pin. Cut with floured doughnut cutter. Cover and let rise until double, 30-40 minutes. Heat vegetable oil in deep fryer to 350°. Slide doughnuts into hot oil with wide spatula. Turn doughnuts as they rise to the surface. Fry until golden brown, about 1 minute on each side. Remove carefully from oil (do not prick surface); drain. Dip the doughnuts into creamy glaze set on rack. Glaze: Heat butter until melted. Remove from heat. Stir in powdered sugar and vanilla until smooth. Stir in water, 1 tablespoon at a time, until desired consistency.",
+                   category: "American",
+                   url: "https://www.mythirtyspot.com/krispy-kreme-copycat-recipe-for/",
+                   photoUrlLarge: "https://d3jbb8n5wk0qxi.cloudfront.net/photos/def8c76f-9054-40ff-8021-7f39148ad4b7/large.jpg",
+                   photoUrlSmall: "https://d3jbb8n5wk0qxi.cloudfront.net/photos/def8c76f-9054-40ff-8021-7f39148ad4b7/small.jpg",
+                   youtube_url: "https://www.youtube.com/watch?v=SamYg6IUGOI"),
+        Recipe(id: "36cf73a3-c505-4a68-b11a-977b2a02d83d",
+               name: "Mince Pies",
+               description: "Traditional British pastries typically enjoyed during the holiday season.",
+               ingredients: """
+               225g cold butter, diced
+               350g plain flour
+               100g golden caster sugar
+               280g mincemeat
+               1 small egg, beaten
+               Icing sugar, to dust
+               """,
+               directions: """
+               1. Preheat the oven to 200°C (180°C fan). 
+               2. Mix the flour and butter in a bowl until it resembles breadcrumbs.
+               3. Add the sugar, then the egg, and knead to form a dough.
+               4. Roll the dough and cut into rounds to line tart tins.
+               5. Fill with mincemeat, then top with pastry lids.
+               6. Bake for 15-20 minutes until golden brown.
+               7. Dust with icing sugar before serving.
+               """,
+               category: "British",
+               url: "https://www.bbcgoodfood.com/recipes/2174/unbelievably-easy-mince-pies",
+               photoUrlLarge: "https://d3jbb8n5wk0qxi.cloudfront.net/photos/8f69452d-d1af-4a5c-9461-203611502b30/large.jpg",
+               photoUrlSmall: "https://d3jbb8n5wk0qxi.cloudfront.net/photos/8f69452d-d1af-4a5c-9461-203611502b30/small.jpg",
+               youtube_url: "https://www.youtube.com/watch?v=PnXft7lQNJE"),
+        Recipe(id: "19c33de0-c9ab-4692-b484-4d9c803b9424",
+               name: "Nanaimo Bars",
+               description: "Nanaimo Bars are a no-bake dessert bar originating from Nanaimo, British Columbia, Canada. They consist of three layers.",
+               ingredients: """
+               125g softened butter
+               50g caster sugar
+               5 tbsp cocoa powder
+               1 egg, beaten
+               200g digestive biscuits, blitzed to crumbs
+               100g desiccated coconut
+               50g chopped almonds (optional)
+               
+               For the custard icing:
+               100g butter, softened
+               4 tbsp double cream
+               3 tbsp custard powder
+               250g icing sugar
+               
+               For the chocolate topping:
+               150g dark chocolate
+               50g butter
+               """,
+               directions: """
+               Step 1:
+               Start by making the biscuit base. In a bowl, over a pan of simmering water, melt the butter with the sugar and cocoa powder, stirring occasionally until smooth. Whisk in the egg for 2 to 3 minutes until the mixture has thickened. Remove from heat and mix in the biscuit crumbs, coconut, and almonds (if using), then press into the base of a lined 20cm square tin. Chill for 10 minutes.
+               
+               Step 2:
+               For the middle layer, make the custard icing; whisk together the butter, cream, and custard powder until light and fluffy, then gradually add the icing sugar until fully incorporated. Spread over the bottom layer and chill in the fridge for at least 10 minutes until the custard is no longer soft.
+               
+               Step 3:
+               Melt the chocolate and butter together in the microwave, then spread over the chilled bars and put back in the fridge. Leave until the chocolate has fully set (about 2 hours). Take the mixture out of the tin and slice into squares to serve.
+               """,
+               category: "Canadian",
+               url: "https://www.bbcgoodfood.com/recipes/nanaimo-bars",
+               photoUrlLarge: "https://d3jbb8n5wk0qxi.cloudfront.net/photos/67257b12-6702-4a9b-b0db-65bd4cbbb6b4/large.jpg",
+               photoUrlSmall: "https://d3jbb8n5wk0qxi.cloudfront.net/photos/67257b12-6702-4a9b-b0db-65bd4cbbb6b4/small.jpg",
+               youtube_url: "https://www.youtube.com/watch?v=MMrE4I1ZtWo"),
+        Recipe(id: "b63fbae1-f5d1-41a7-a030-1a3a556f4c57",
+               name: "New York Cheesecake",
+               description: "A rich, creamy dessert known for its dense, velvety texture and tangy flavor. It's made with a crust and a filling.",
+               ingredients: """
+               For the crust:
+               85g butter, plus extra for the tin
+               140g digestive biscuits, made into fine crumbs (add 2 extra biscuits if you like a thicker base)
+               1 tbsp sugar, granulated or golden caster
+               
+               For the cheesecake filling:
+               900g Philadelphia cheese, or other full-fat soft cheese
+               250g golden caster sugar
+               3 tbsp plain flour
+               1 ½ tsp vanilla extract
+               Finely grated zest of 1 lemon (about 2 tsp)
+               1 ½ tsp lemon juice
+               3 large eggs, plus 1 yolk
+               284ml carton soured cream
+               
+               For the soured cream topping:
+               142ml carton soured cream
+               1 tbsp golden caster sugar
+               2 tsp lemon juice
+               """,
+               directions: """
+               1. Preheat oven to 180°C (160°C fan/gas 4) and line a 23cm springform tin with parchment or foil.
+               2. Melt 85g butter, mix with 140g biscuit crumbs and 1 tbsp sugar, then press into the tin. Bake for 10 minutes and cool.
+               3. Increase oven to 220°C (200°C fan/gas 7). Beat 900g cream cheese until creamy, then add 250g sugar, 3 tbsp flour, and salt.
+               4. Add vanilla, lemon zest, juice, eggs, and whisk. Stir in 200ml soured cream and whisk until smooth.
+               5. Brush tin with butter, pour in the filling, and bake for 10 minutes.
+               6. Reduce oven to 110°C (90°C fan/gas ¼) and bake for 45 minutes.
+               7. Cool in the oven for 2 hours. Mix reserved soured cream with sugar and lemon juice, spread on top, and refrigerate for 8 hours.
+               8. Loosen edges with a knife, remove from tin, and serve.
+               """,
+               category: "American",
+               url: "https://www.bbcgoodfood.com/recipes/2869/new-york-cheesecake",
+               photoUrlLarge: "https://d3jbb8n5wk0qxi.cloudfront.net/photos/9d257442-51c8-45c7-807a-e6132baa8fce/large.jpg",
+               photoUrlSmall: "https://d3jbb8n5wk0qxi.cloudfront.net/photos/9d257442-51c8-45c7-807a-e6132baa8fce/small.jpg",
+               youtube_url: "https://www.youtube.com/watch?v=tspdJ6hxqnc"),
+        Recipe(id: "fa4ad799-0706-4146-95a7-09f24b6dd1da",
+               name: "Pancakes",
+               description: "A popular breakfast dish made from a simple batter of flour, eggs, milk, and butter, which is cooked on a griddle or frying pan until golden brown.",
+               ingredients: """
+               100g plain flour
+               2 large eggs
+               300ml milk
+               1 tbsp sunflower or vegetable oil, plus a little extra for frying
+               Lemon wedges, to serve (optional)
+               Caster sugar, to serve (optional)
+               """,
+               directions: """
+               Step 1:
+               Put 100g plain flour, 2 large eggs, 300ml milk, 1 tbsp sunflower or vegetable oil, and a pinch of salt into a bowl or large jug, then whisk to a smooth batter. This should be similar in consistency to single cream.
+               
+               Step 2:
+               Set aside for 30 minutes to rest if you have time, or start cooking straight away.
+               
+               Step 3:
+               Set a medium frying pan or crêpe pan over a medium heat and carefully wipe it with some oiled kitchen paper.
+               
+               Step 4:
+               When hot, cook your pancakes for 1 minute on each side until golden, using around half a ladleful of batter per pancake. Keep them warm in a low oven as you make the rest.
+               
+               Step 5:
+               Serve with lemon wedges and caster sugar, or your favourite filling. Once cold, you can layer the pancakes between baking parchment, then wrap in cling film and freeze for up to two months.
+               """,
+               category: "American",
+               url: "https://www.bbcgoodfood.com/recipes/2907669/easy-pancakes",
+               photoUrlLarge: "https://d3jbb8n5wk0qxi.cloudfront.net/photos/b2879d3a-b145-4618-9c1d-fd3a451d0739/large.jpg",
+               photoUrlSmall: "https://d3jbb8n5wk0qxi.cloudfront.net/photos/b2879d3a-b145-4618-9c1d-fd3a451d0739/small.jpg",
+               youtube_url: "https://www.youtube.com/watch?v=LWuuCndtJr0"),
+        Recipe(id: "5de59157-f84b-4390-b8f4-ff19104782da",
+               name: "Parkin Cake",
+               description: "A traditional British gingerbread cake, especially popular in Yorkshire.",
+               ingredients: """
+               200g butter, plus extra for greasing
+               1 large egg
+               4 tbsp milk
+               200g golden syrup
+               85g treacle
+               85g light soft brown sugar
+               100g medium oatmeal
+               250g self-raising flour
+               1 tbsp ground ginger
+               """,
+               directions: """
+               Step 1:
+               Heat the oven to 160°C/140°C fan/gas 3. Butter a deep 22cm square cake tin and line with baking parchment. Beat the egg and milk together with a fork.
+               
+               Step 2:
+               Gently melt the syrup, treacle, sugar, and butter together in a large pan until the sugar has dissolved. Remove from the heat. Mix together the oatmeal, flour, and ginger, and stir into the syrup mixture, followed by the egg and milk.
+               
+               Step 3:
+               Pour the mixture into the tin and bake for 50 minutes to 1 hour until the cake feels firm and a little crusty on top. Cool in the tin, then wrap in more parchment and foil. Keep for up to five days before eating if you can – it’ll become softer and stickier the longer you leave it, up to two weeks.
+               """,
+               category: "British",
+               url: "https://www.bbcgoodfood.com/recipes/1940684/parkin",
+               photoUrlLarge: "https://d3jbb8n5wk0qxi.cloudfront.net/photos/f860d6d3-fc18-4c41-b368-2c86a44b79b8/large.jpg",
+               photoUrlSmall: "https://d3jbb8n5wk0qxi.cloudfront.net/photos/f860d6d3-fc18-4c41-b368-2c86a44b79b8/small.jpg",
+               youtube_url: "https://www.youtube.com/watch?v=k1lG4vk2MQA"),
+        Recipe(id: "cf8cbc60-2fce-4af8-8317-1736e9e116d1",
+               name: "Peach & Blueberry Grunt",
+               description: "A classic, comforting dessert that combines juicy, ripe peaches and blueberries in a lightly spiced, sweetened sauce.",
+               ingredients: """
+               1 tbsp cornflour
+               Juice of 2 oranges and zest from ½
+               2 tbsp caster sugar
+               6 ripe peaches
+               250g blueberries
+               
+               For the grunt:
+               200g self-raising flour
+               50g butter, cut into small pieces, plus 15g/½oz melted
+               100g light muscovado sugar
+               1 tsp ground cinnamon
+               5-6 tbsp milk
+               """,
+               directions: """
+               Step 1:
+               Heat oven to 190°C/170°C fan/gas 5. Butter a wide shallow ovenproof dish. Blend the cornflour with the orange zest and juice, and put in a large pan with the sugar. Halve, stone, and slice the peaches and add to the pan. Bring slowly to the boil, stirring gently until the sauce is shiny and thickened, about 3-4 minutes. Remove from the heat, stir in the blueberries, and tip into the prepared dish.
+               
+               Step 2:
+               Tip the flour into a mixing bowl and add the 50g butter. Rub the butter into the flour until it resembles fine breadcrumbs, then stir in half the sugar. Mix the remaining sugar with the cinnamon and set aside.
+               
+               Step 3:
+               Add the milk to the dry ingredients and mix to a soft dough. Turn out onto a lightly floured surface and knead briefly. Roll out to an oblong roughly 16 x 24cm. Brush with melted butter and sprinkle evenly with the spicy sugar. Roll up from one long side and cut into 12 slices. Arrange around the top of the dish, leaving the center uncovered.
+               
+               Step 4:
+               Bake for 20-25 minutes, until the topping is crisp and golden. Serve warm.
+               """,
+               category: "American",
+               url: "https://www.bbcgoodfood.com/recipes/1553651/peach-and-blueberry-grunt",
+               photoUrlLarge: "https://d3jbb8n5wk0qxi.cloudfront.net/photos/483a686e-8f97-4139-b575-1c154d542b10/large.jpg",
+               photoUrlSmall: "https://d3jbb8n5wk0qxi.cloudfront.net/photos/483a686e-8f97-4139-b575-1c154d542b10/small.jpg",
+               youtube_url: "https://www.youtube.com/watch?v=SNeO28BCpsc"),
+        Recipe(id: "ba8e2e4e-e1b3-4231-a663-eef155fabbdc",
+               name: "Peanut Butter Cheesecake",
+               description: "A rich, creamy dessert that blends the smooth, tangy texture of traditional cheesecake with the sweet and savory flavor of peanut butter.",
+               ingredients: """
+               For the base:
+               50g butter
+               175g pack peanut cookies
+               
+               For the filling:
+               5 gelatine leaves
+               500g tub ricotta
+               175g smooth peanut butter
+               175g golden syrup
+               150ml milk
+               
+               To decorate:
+               270ml pot double cream
+               2 tbsp soft brown sugar
+               1 bar peanut brittle, crushed
+               """,
+               directions: """
+               Step 1:
+               Oil and line a 20cm round loose-bottomed cake tin with cling film, making it as smooth as possible. Melt the butter in a pan. Crush the biscuits by bashing them in a bag with a rolling pin, then stir them into the butter until very well coated. Press the mixture firmly into the base of the tin and chill.
+               
+               Step 2:
+               Soak the gelatine in water while you make the filling. Tip the ricotta into a bowl, then beat in the peanut butter and syrup. Ricotta has a slightly grainy texture, so blitz until smooth with a stick blender for a smoother texture if you prefer.
+               
+               Step 3:
+               Take the soaked gelatine from the water and squeeze dry. Put it into a pan with the milk and heat very gently until the gelatine dissolves. Beat into the peanut mixture, then tip onto the biscuit base. Chill until set.
+               
+               Step 4:
+               To freeze, leave in the tin, and as soon as it is solid, cover the surface with cling film, then wrap the tin with cling film and foil.
+               
+               Step 5:
+               To defrost, thaw in the fridge overnight.
+               
+               Step 6:
+               To serve, carefully remove from the tin. Whisk the cream with the sugar until it holds its shape, then spread on top of the cheesecake and scatter with the peanut brittle.
+               """,
+               category: "American",
+               url: "https://www.bbcgoodfood.com/recipes/1759649/peanut-butter-cheesecake",
+               photoUrlLarge: "https://d3jbb8n5wk0qxi.cloudfront.net/photos/b65a6b5c-fcbd-46bc-b87e-cd69a9f8e656/large.jpg",
+               photoUrlSmall: "https://d3jbb8n5wk0qxi.cloudfront.net/photos/b65a6b5c-fcbd-46bc-b87e-cd69a9f8e656/small.jpg",
+               youtube_url: "https://www.youtube.com/watch?v=QSTsturcyL0"),
+        Recipe(id: "6b546d86-aaa6-47ff-a4e4-49836392f9b0",
+               name: "Peanut Butter Cookies",
+               description: "Soft, chewy treats with a rich, nutty flavor.",
+               ingredients: """
+               1 cup peanut butter
+               ½ cup sugar
+               1 egg
+               """,
+               directions: """
+               Step 1:
+               Preheat oven to 350ºF (180ºC).
+               
+               Step 2:
+               In a large bowl, mix together the peanut butter, sugar, and egg.
+               
+               Step 3:
+               Scoop out a spoonful of dough and roll it into a ball. Place the cookie balls onto a nonstick baking sheet.
+               
+               Step 4:
+               For extra decoration and to make them cook more evenly, flatten the cookie balls by pressing a fork down on top of them, then press it down again at a 90º angle to make a criss-cross pattern.
+               
+               Step 5:
+               Bake for 8-10 minutes or until the bottom of the cookies are golden brown.
+               
+               Step 6:
+               Remove from baking sheet and cool.
+               
+               Step 7:
+               Enjoy!
+               """,
+               category: "American",
+               url: "https://tasty.co/recipe/3-ingredient-peanut-butter-cookies",
+               photoUrlLarge: "https://d3jbb8n5wk0qxi.cloudfront.net/photos/fa8fca0d-fd72-4f84-937d-2db66739f5b4/large.jpg",
+               photoUrlSmall: "https://d3jbb8n5wk0qxi.cloudfront.net/photos/fa8fca0d-fd72-4f84-937d-2db66739f5b4/small.jpg",
+               youtube_url: "N/A"),
+        Recipe(id: "8925bfec-3ef5-4c56-a9d1-80e42654e0bf",
+               name: "Pear Tarte Tatin",
+               description: "A delicious twist on the classic French caramelized apple dessert.",
+               ingredients: """
+               8 pears
+               100g caster sugar
+               100g butter
+               2 star anise
+               3 cardamom pods
+               1 large cinnamon stick
+               2 tbsp brandy
+               500g block all-butter puff pastry
+               """,
+               directions: """
+               Step 1:
+               Core, peel, and halve the pears. You can prepare them a day ahead and refrigerate uncovered.
+               
+               Step 2:
+               In an ovenproof frying pan, melt sugar, butter, star anise, cardamom, and cinnamon over high heat, shaking occasionally until caramelized.
+
+               Step 3:
+               Add the pears and cook in the sauce for 10-12 minutes, tossing occasionally until caramelized. Add brandy, flambé, then set aside.
+
+               Step 4:
+               Preheat oven to 200°C (fan 180°C/gas 6). Roll out pastry to 1 coin thick, cut a circle slightly larger than the pan, and thin the edges.
+
+               Step 5:
+               Arrange pears in a floral pattern, cut side up, with the cinnamon stick and cardamom pods in the center.
+
+               Step 6:
+               Drape pastry over the pears, tuck edges down, pierce, then bake for 15 minutes. If juice bubbles up, pour it off.
+
+               Step 7:
+               Reduce oven to 180°C (fan 160°C/gas 4) and bake for 15 more minutes until golden. Let cool for 10 minutes, then invert onto a dish.
+               """,
+               category: "French",
+               url: "https://www.bbcgoodfood.com/recipes/4778/pear-tarte-tatin",
+               photoUrlLarge: "https://d3jbb8n5wk0qxi.cloudfront.net/photos/376f3377-c481-43cf-bcc6-c0befd612552/large.jpg",
+               photoUrlSmall: "https://d3jbb8n5wk0qxi.cloudfront.net/photos/376f3377-c481-43cf-bcc6-c0befd612552/small.jpg",
+               youtube_url: "https://www.youtube.com/watch?v=8U1tKWKDeWA"),
+            Recipe( id: "25a52168-29f8-4309-b48b-a96cae6ce867",
+                    name: "Polskie Naleśniki (Polish Pancakes)",
+                    description: "are thin, crepe-like pancakes popular in Poland.",
+                    ingredients: """
+               The batter for the pancakes is made with flour
+               eggs, milk, water (preferably carbonated)
+               and a pinch of salt
+               while optional ingredients include sugar, and oil or butter
+               """,
+                    directions: "Depending on whether the batter is too thick or too thin, you may need to add more flour or water, however, do so in small batches. It's important to rest the batter at room temperature for a minimum of 20-30 minutes so that any lumps left can dissolve. The rested batter will produce thinner, tender pancakes. Once you pour the batter into the pan, swirl the pan to help the batter spread. During cooking, the pancake may stick to the pan, so to loosen it, go around its edges with a spatula. Once you flip the pancake, the other side will need less time to cook. Stack the finished pancakes and keep them warm until you make the rest of the pancakes and are ready to fill them.",
+                   category: "Polish",
+                   url: "https://www.tasteatlas.com/nalesniki/recipe",
+                   photoUrlLarge: "https://d3jbb8n5wk0qxi.cloudfront.net/photos/8b526c42-5121-4ddf-b8f9-a0c1153b5c20/large.jpg",
+                   photoUrlSmall: "https://d3jbb8n5wk0qxi.cloudfront.net/photos/8b526c42-5121-4ddf-b8f9-a0c1153b5c20/small.jpg",
+                   youtube_url: "https://www.youtube.com/watch?v=EZS4ev2crHc"),
+        Recipe(id: "630dec20-76a5-468b-9bd9-bfd170515204",
+               name: "Portuguese Custard Tarts",
+               description: "Known as Pastéis de Nata, these are a beloved Portuguese pastry.",
+               ingredients: """
+               2 tbsp plain flour
+               2 tbsp icing sugar, plus more to serve
+               375g all-butter puff pastry
+               250g golden caster sugar
+               2 strips lemon zest
+               1 stick cinnamon
+               2 eggs
+               4 egg yolks
+               50g cornflour
+               500ml whole milk
+               1 pod vanilla, split lengthways, seeds scraped out and kept
+               Ground cinnamon, to serve
+               """,
+               directions: """
+               1. Mix the flour and icing sugar, and use this to dust the work surface. Roll the pastry out to make a 45 x 30cm rectangle. Roll up lengthways to create a long sausage shape. Cut the pastry into 24 wheels, about 1-2cm thick. Roll each wheel lightly with the rolling pin to fit 2 x 12-hole non-stick fairy cake tins. Press the pastry circles into the tins and mould into the tins to make thin cases. Chill until needed.
+
+               2. Heat the oven to 220°C/fan 200°C/gas 7. Make a sugar syrup by bringing the sugar, 200ml water, lemon zest, and cinnamon stick to the boil. Reduce until syrupy, allow to cool, then remove the cinnamon and lemon.
+
+               3. Whisk the eggs, egg yolks, and cornflour until smooth in another large pan. Heat the milk and vanilla pod seeds in a separate pan until just below the boil. Gradually pour the hot milk over the eggs and cornflour, then cook on a low heat, continually whisking. Add the cooled sugar syrup to the custard and whisk until thickened slightly.
+
+               4. Pour the custard through a sieve. Pour into the pastry cases and bake for 15 minutes until the pastry is golden and the custard has darkened. Cool completely in the tins, then sift over icing sugar and ground cinnamon to serve.
+               """,
+               category: "Portuguese",
+               url: "https://www.olivemagazine.com/recipes/baking-and-desserts/portuguese-custard-tarts/",
+               photoUrlLarge: "https://d3jbb8n5wk0qxi.cloudfront.net/photos/759e00ff-20fc-45c4-ae78-404280e84970/large.jpg",
+               photoUrlSmall: "https://d3jbb8n5wk0qxi.cloudfront.net/photos/759e00ff-20fc-45c4-ae78-404280e84970/small.jpg",
+               youtube_url: "https://www.youtube.com/watch?v=lWLCxui1Mw8"
+        ),
+        Recipe(
+            id: "11b2e8a4-7f4e-4b81-b8db-09ea2f10e9d3",
+            name: "Pumpkin Pie",
+            description: "A classic dessert made with a smooth, spiced filling of pureed pumpkin, eggs, sugar, and a blend of warming spices like cinnamon, nutmeg, and ginger.",
+            ingredients: """
+            750g/1lb 10oz pumpkin or butternut squash, peeled, deseeded, and cut into chunks
+            350g sweet shortcrust pastry
+            Plain flour for dusting
+            140g caster sugar
+            ½ tsp salt
+            ½ tsp fresh nutmeg, grated
+            1 tsp cinnamon
+            2 eggs, beaten
+            25g butter, melted
+            175ml milk
+            1 tbsp icing sugar
+            """,
+            directions: """
+            Step 1:
+            Place the pumpkin in a large saucepan, cover with water, and bring to a boil. Cover with a lid and simmer for 15 mins or until tender. Drain pumpkin and let cool.
+
+            Step 2:
+            Heat oven to 180C/160C fan/gas 4. Roll out the pastry on a lightly floured surface and use it to line a 22cm loose-bottomed tart tin. Chill for 15 mins. Line the pastry with baking parchment and baking beans, then bake for 15 mins. Remove the beans and paper, and cook for a further 10 mins until the base is pale golden and biscuity. Remove from the oven and allow to cool slightly.
+
+            Step 3:
+            Increase oven to 220C/200C fan/gas 7. Push the cooled pumpkin through a sieve into a large bowl or blend to a puree in a food processor. In a separate bowl, combine the sugar, salt, nutmeg, and half the cinnamon. Mix in the beaten eggs, melted butter, and milk, then add to the pumpkin purée and stir to combine. Pour into the tart shell and cook for 10 mins, then reduce the temperature to 180C/160C fan/gas 4. Continue to bake for 35-40 mins until the filling has just set.
+
+            Step 4:
+            Leave to cool, then remove the pie from the tin. Mix the remaining cinnamon with the icing sugar and dust over the pie. Serve chilled.
+            """,
+            category: "American",
+            url: "https://www.bbcgoodfood.com/recipes/1742633/pumpkin-pie",
+            photoUrlLarge: "https://d3jbb8n5wk0qxi.cloudfront.net/photos/93e50ff1-bf1d-4f88-8978-e18e01d3231d/large.jpg",
+            photoUrlSmall: "https://d3jbb8n5wk0qxi.cloudfront.net/photos/93e50ff1-bf1d-4f88-8978-e18e01d3231d/small.jpg",
+            youtube_url: "https://www.youtube.com/watch?v=hpapqEeb36k"
+        ),
+        Recipe(id: "cdc34bb5-c9e3-4465-9088-cf2e2aa8e4ee",
+            name: "Rock Cakes",
+            description: "Small, rustic, and crumbly British pastries with a rough, rock-like appearance.",
+            ingredients: """
+            225g/8oz self-raising flour
+            75g/2½oz caster sugar
+            1 tsp baking powder
+            125g/4½oz unsalted butter, cut into cubes
+            150g/5½oz dried fruit (raisins, sultanas, or currants)
+            1 free-range egg
+            1 tbsp milk
+            2 tsp vanilla extract
+            """,
+            directions: """
+            Preheat the oven to 180C/160C Fan/Gas 4 and line a baking tray with baking parchment.
+
+            Mix the flour, sugar, and baking powder in a bowl and rub in the cubed butter until the mixture looks like breadcrumbs. Then, mix in the dried fruit.
+
+            In a clean bowl, beat the egg and milk together with the vanilla extract.
+
+            Add the egg mixture to the dry ingredients and stir with a spoon until the mixture just comes together as a thick, lumpy dough. Add a teaspoon more milk if needed to help the mixture stick together.
+
+            Place spoonfuls of the mixture onto the prepared baking tray. Leave space between them as they will flatten and spread out to double their size during baking.
+
+            Bake for 15–20 minutes, until golden-brown. Allow to cool for a couple of minutes, then transfer them onto a wire rack to cool.
+            """,
+            category: "British",
+            url: "https://www.bbc.co.uk/food/recipes/rock_cakes_03094",
+            photoUrlLarge: "https://d3jbb8n5wk0qxi.cloudfront.net/photos/dce36ed7-d5bd-4532-9e9f-fafd75a4eb8f/large.jpg",
+            photoUrlSmall: "https://d3jbb8n5wk0qxi.cloudfront.net/photos/dce36ed7-d5bd-4532-9e9f-fafd75a4eb8f/small.jpg",
+            youtube_url: "https://www.youtube.com/watch?v=tY3taZO3Aro"),
+        Recipe(id: "fe81ba97-ee9e-4af9-bc3a-4f7a86eeb820",
+            name: "Rocky Road Fudge",
+            description: "A rich, chocolatey treat packed with crunchy nuts, soft marshmallows, and sometimes dried fruit or cookie pieces.",
+            ingredients: """
+            - 2 cups miniature marshmallows, divided
+            - 3 cups semisweet chocolate chips
+            - ½ cup creamy peanut butter or almond butter
+            - 1 teaspoon vanilla extract
+            - 1 ¼ cups toasted and chopped almonds or peanuts (or your favorite type of nut), divided
+            - ¼ cup mallow bits or additional ½ cup miniature marshmallows (optional)
+            """,
+            directions: """
+            1. Line an 8-inch pan with wax paper and coat with non-stick spray. Sprinkle ½ cup marshmallows on the bottom.
+
+            2. Microwave chocolate chips and peanut butter in 20-second intervals until melted. Stir in vanilla.
+
+            3. Reserve 2 tbsp nuts. Fold in 1½ cups marshmallows and remaining nuts.
+
+            4. Spread mixture into the pan, top with reserved nuts and marshmallows.
+
+            5. Refrigerate for 4 hours until set. Remove from pan, peel off wax paper, cut into pieces, and serve.
+            """,
+            category: "American",
+            url: "http://tiphero.com/rocky-road-fudge/",
+            photoUrlLarge: "https://d3jbb8n5wk0qxi.cloudfront.net/photos/b51b389c-a408-4664-b0d2-a437cbc352b0/large.jpg",
+            photoUrlSmall: "https://d3jbb8n5wk0qxi.cloudfront.net/photos/b51b389c-a408-4664-b0d2-a437cbc352b0/small.jpg",
+            youtube_url: "https://www.youtube.com/watch?v=N1aJ3nEYXyg"),
+        Recipe(id: "e084dc2c-37e7-4600-9b46-76e673e8e2d2",
+            name: "Rogaliki (Polish Croissant Cookies)",
+            description: "Traditional Polish crescent-shaped cookies with a soft, buttery texture.",
+            ingredients: """
+            - 1 cup butter
+            - 3 egg yolks
+            - 1 (8-ounce) box Philadelphia Cream Cheese
+            - 1 teaspoon baking powder
+            - 3 cups flour
+            - Jam or preserves (your favorite kind)
+            """,
+            directions: """
+            1. Mix egg yolks, cream cheese, and baking powder, then gradually add flour. Knead into dough when crumbly.
+            
+            2. Roll into a log, wrap in foil, and freeze for 15 minutes. Preheat oven to 375°F (190°C).
+
+            3. Divide dough in half, roll out, and cut into 3-inch triangles.
+
+            4. Add a small spoon of jam to each, roll into crescents, and place on a greased baking sheet.
+
+            5. Bake for 10-12 minutes until golden. Repeat with remaining dough.
+
+            6. Cool, then sprinkle with powdered sugar. Makes about 60 cookies.
+            """,
+            category: "Polish",
+            url: "https://www.food.com/recipe/rogaliki-polish-croissant-cookies-with-jam-filling-200668",
+            photoUrlLarge: "https://d3jbb8n5wk0qxi.cloudfront.net/photos/15d50359-5f62-4583-a9e9-d761bc58fecf/large.jpg",
+            photoUrlSmall: "https://d3jbb8n5wk0qxi.cloudfront.net/photos/15d50359-5f62-4583-a9e9-d761bc58fecf/small.jpg",
+               youtube_url: "https://www.youtube.com/watch?v=VAR10T9mfhU"),
+        Recipe(id: "23fb89ed-00ec-407e-8802-d0a510973df9",
+            name: "Salted Caramel Cheesecake",
+            description: "A rich, indulgent dessert with a creamy, smooth cheesecake filling topped with a luscious salted caramel sauce.",
+            ingredients: """
+            - 250g Digestives/Shortbread Biscuits
+            - 75g Salted Pretzels
+            - 135g Unsalted Butter (or Stork, melted)
+            - 500g Full Fat Cream Cheese
+            - 1 tsp Vanilla Extract
+            - 100g Icing Sugar
+            - 150g Caramel (I used Carnations)
+            - 1-2 tsp Maldon Sea Salt Flakes
+            - 300ml Double Cream
+            - 100g Caramel
+            - Toffee Popcorn
+            - Pretzels
+            """,
+            directions: """
+            1. Blitz the Biscuits and Pretzels in a food processor and mix with the melted Butter. 
+            Spread on the bottom of an 8"/20cm Deep Springform Tin and press down firmly. Leave to set in the fridge.
+
+            2. Using an electric mixer (KitchenAid with the whisk attachment), whisk together the Cream Cheese, Vanilla, and Icing Sugar until smooth.
+
+            3. Add the Caramel and whisk again until smooth and lump-free – this may take some time. Whisk at medium speed for the best result.
+
+            4. Pour in the Double Cream and Sea Salt Flakes, and continue to whisk for a couple of minutes until thick and mousse-like (it should hold itself completely when finished).
+
+            5. Spread the mixture over the biscuit base and leave to set in the fridge overnight.
+
+            6. Once set, carefully remove the cheesecake from the tin and decorate. Drizzle with spare caramel, add Toffee Popcorn, and top with more Pretzels.
+            """,
+            category: "American",
+            url: "http://www.janespatisserie.com/2015/11/09/no-bake-salted-caramel-cheesecake/",
+            photoUrlLarge: "https://d3jbb8n5wk0qxi.cloudfront.net/photos/b75ee8ef-a290-4062-8b26-60722d75d09c/large.jpg",
+            photoUrlSmall: "https://d3jbb8n5wk0qxi.cloudfront.net/photos/b75ee8ef-a290-4062-8b26-60722d75d09c/small.jpg",
+            youtube_url: "https://www.youtube.com/watch?v=q5dQp3qpmI4"),
+        Recipe( id: "c4560eaa-3c0f-4266-beba-4ddce62063e0",
+            name: "Seri Muka Kuih",
+            description: "A traditional Malaysian dessert consisting of two layers, a glutinous rice base and a pandan custard topping.",
+            ingredients: """
+            - 400g Glutinous Rice
+            - 150ml Coconut Milk
+            - 100ml Water
+            - 1 tsp Salt
+            - 3 Pandan Leaves, knotted
+            - 150ml Pandan Juice (see tips)
+            - 5 tbsp Cornflour
+            - 3 tbsp All Purpose Flour
+            - 3 large Eggs (53g +/- per egg)
+            - 200ml Coconut Milk
+            - 140g Sugar
+            - A pinch of Salt
+            """,
+            directions: """
+            1. Soak the glutinous rice in water for at least 1 ½ hours prior to using. Drain.
+            
+            2. Prepare a 9-inch round or square cake pan by spraying with cooking spray or lining with plastic wrap.
+            
+            3. Mix coconut milk, water, salt, and the rice. Pour it into the cake pan, topped with the pandan knots.
+            
+            4. Steam for 30 minutes.
+            
+            5. After 30 minutes, fluff up the rice and remove pandan knots. Using a greased spatula, flatten the steamed rice. Ensure there are no holes, air bubbles, or gaps, especially along the sides.
+            
+            6. Steam for another 10 minutes.
+            
+            7. In a bowl, combine pandan juice, coconut milk, all-purpose flour, cornflour, and sugar. Mix well.
+            
+            8. Add eggs and whisk well. Strain into a medium-sized metal bowl or pot.
+            
+            9. Place the pandan mixture over simmering water (double boiler or bain-marie). Stir continuously and cook until the custard thickens (about 15 minutes).
+            
+            10. Pour the pandan custard over the glutinous rice layer, tapping gently to remove air bubbles. Steam for another 30 minutes.
+            
+            11. Remove the kuih seri muka from the steamer and allow it to cool completely before cutting into rectangles or diamond shapes.
+            """,
+            category: "Malaysian",
+            url: "https://makan.ch/recipe/kuih-seri-muka/",
+            photoUrlLarge: "https://d3jbb8n5wk0qxi.cloudfront.net/photos/658442fe-e3d3-44a5-9081-e2424fb0129d/large.jpg",
+            photoUrlSmall: "https://d3jbb8n5wk0qxi.cloudfront.net/photos/658442fe-e3d3-44a5-9081-e2424fb0129d/small.jpg",
+            youtube_url: "https://www.youtube.com/watch?v=_NJtCfqgaBo"),
+        Recipe(id: "2b9003b5-000d-445a-8b19-bbaed1b9f851",
+            name: "Spotted Dick",
+            description: "A classic British steamed suet pudding studded with dried currants or raisins, giving it its spotted appearance.",
+            ingredients: """
+            - 250g self-raising flour
+            - A pinch of salt
+            - 125g shredded suet
+            - 180g currants
+            - 80g caster sugar
+            - Finely grated zest of 1 lemon
+            - Finely grated zest of 1 small orange
+            - 150ml whole milk (plus 2-3 tbsp extra)
+            - Custard, to serve
+            """,
+            directions: """
+            1. Put the flour and salt in a bowl. Add the suet, currants, sugar, lemon zest, and orange zest.
+            
+            2. Pour in 150ml of milk and mix to form a firm but moist dough. Add the extra milk if necessary.
+            
+            3. Shape the dough into a fat roll about 20cm long. Place it on a large rectangle of baking parchment. Wrap loosely to allow for the pudding to rise, and tie the ends with string (like a Christmas cracker).
+            
+            4. Place a steamer over a large pan of boiling water, add the pudding to the steamer, cover, and steam for 1½ hours. Top up the pan with water as needed.
+            
+            5. Remove the pudding from the steamer and allow it to cool slightly before unwrapping. Serve sliced with custard.
+            """,
+            category: "British",
+            url: "https://www.bbcgoodfood.com/recipes/2686661/spotted-dick",
+            photoUrlLarge: "https://d3jbb8n5wk0qxi.cloudfront.net/photos/1990117c-dcb1-41aa-bdaf-562b23bdf3d0/large.jpg",
+            photoUrlSmall: "https://d3jbb8n5wk0qxi.cloudfront.net/photos/1990117c-dcb1-41aa-bdaf-562b23bdf3d0/small.jpg",
+            youtube_url: "https://www.youtube.com/watch?v=fu15XOF-ros"),
+        Recipe(id: "ee112b29-829b-45c6-8c3d-3effe739c9f0",
+            name: "Sticky Toffee Pudding",
+            description: "A warm, moist sponge cake made with dates, giving it a rich, caramel-like flavor.",
+            ingredients: """
+            - 100g butter (plus extra for greasing)
+            - 175g light muscovado sugar
+            - 2 large free-range eggs
+            - 225g self-raising flour
+            - 1 tsp baking powder
+            - 1 tsp bicarbonate of soda
+            - 3 tbsp black treacle
+            - 275ml full-fat milk
+            - Double cream or vanilla ice cream, to serve
+
+            For the sauce:
+            - 100g butter
+            - 125g light muscovado sugar
+            - 1 tbsp black treacle
+            - 300ml pouring double cream
+            - 1 tsp vanilla extract
+            """,
+            directions: """
+            1. Preheat the oven to 180°C (160°C Fan/Gas 4). Butter a wide shallow 1.7-litre/3-pint ovenproof dish.
+            
+            2. In a mixing bowl, combine butter, sugar, eggs, flour, baking powder, bicarbonate of soda, and treacle. Beat with an electric handheld whisk for about 30 seconds until well combined.
+            
+            3. Gradually add the milk and whisk again until smooth.
+            
+            4. Pour the batter into the prepared dish. Bake for 35–40 minutes, or until the pudding is well risen and springy in the centre.
+            
+            5. For the sauce: In a saucepan, combine butter, sugar, treacle, and cream. Stir over low heat until the sugar dissolves and the butter melts. Bring to a boil and stir for 1 minute.
+            
+            6. Pour half of the sauce over the baked pudding in the dish. Serve with double cream or vanilla ice cream.
+            """,
+            category: "British",
+            url: "https://www.bbc.co.uk/food/recipes/marys_sticky_toffee_41970",
+            photoUrlLarge: "https://d3jbb8n5wk0qxi.cloudfront.net/photos/d9e32cfd-818d-4428-8f49-b3a6ae624f58/large.jpg",
+            photoUrlSmall: "https://d3jbb8n5wk0qxi.cloudfront.net/photos/d9e32cfd-818d-4428-8f49-b3a6ae624f58/small.jpg",
+            youtube_url: "https://www.youtube.com/watch?v=Wytv3bjqJII"),
+        Recipe(id: "7365af2d-ab0b-4bab-a94f-462ffd752a09",
+               name: "Sticky Toffee Pudding Ultimate",
+               description: "takes the classic dessert to the next level with an even richer, more indulgent twist.",
+               ingredients: "Coming Soon!",
+               directions: "Coming Soon!",
+               category: "British",
+               url: "https://www.youtube.com/watch?v=Wytv3bjqJII",
+               photoUrlLarge: "https://d3jbb8n5wk0qxi.cloudfront.net/photos/f21f80c8-890a-46c5-8d1e-28baf52c30c8/large.jpg",
+               photoUrlSmall: "https://d3jbb8n5wk0qxi.cloudfront.net/photos/f21f80c8-890a-46c5-8d1e-28baf52c30c8/small.jpg",
+               youtube_url: "https://www.youtube.com/watch?v=hKq6RbxJHBo"),
+        Recipe( id: "74247e48-e299-4be5-a0ab-537f29fbc043",
+               name: "Strawberries Romanoff",
+                description: " is a classic, indulgent dessert featuring fresh, juicy strawberries marinated in orange liqueur, typically Grand Marnier, and a touch of sugar.",
+                ingredients: """
+                4 Tbsp sugar
+                4 Tbsp liqueur
+                1 cup cold heavy cream
+                1/4 cup powdered sugar
+                1/4 cup sour cream
+                """,
+                directions: "In a medium bowl, combine hulled and quartered strawberries, 4 Tbsp sugar and 4 Tbsp liqueur, stir to combine then cover and refrigerate at least 1 hour and up to 2 hours, stirring once or twice. Just before serving, in a large mixing bowl, combine 1 cup cold heavy cream and 1/4 cup powdered sugar, and beat with an electric mixer until stiff peaks form. Using a spatula, fold in 1/4 cup sour cream just until well blended. Just before serving, in a large mixing bowl, combine 1 cup cold heavy cream and 1/4 cup powdered sugar, and beat with an electric mixer until stiff peaks form. Using a spatula, fold in 1/4 cup sour cream just until well blended.",
+               category: "Russian",
+               url: "https://natashaskitchen.com/strawberries-romanoff-recipe/",
+               photoUrlLarge: "https://d3jbb8n5wk0qxi.cloudfront.net/photos/3e79a729-35d0-4043-abe1-9e258be7e8c2/large.jpg",
+               photoUrlSmall: "https://d3jbb8n5wk0qxi.cloudfront.net/photos/3e79a729-35d0-4043-abe1-9e258be7e8c2/small.jpg",
+               youtube_url: "https://www.youtube.com/watch?v=ybWHc4Vi-xU"),
+        Recipe(id: "d2251700-21da-4931-9dc6-4d273643f5c7",
+               name: "Strawberry Rhubarb Pie",
+               description: "is a classic, sweet-tart dessert that combines ripe strawberries with tangy rhubarb in a buttery, flaky pie crust.",
+               ingredients: """
+               2 1/2 cups (350 grams) all-purpose flour
+               
+               1 teaspoon salt
+
+               2 tablespoon (30 grams) granulated white sugar
+
+               1 cup (226 grams) unsalted butter, chilled, and cut into 1 inch (2.5 cm) chunks
+
+               1/4 to 1/2 cup (60 - 120 ml) ice water
+
+               Strawberry Rhubarb Filling:
+
+               1 pound (454 grams) rhubarb, cut into 1/2 inch (1.5 cm) pieces
+
+               1 pound (454 grams) fresh strawberries, cut into 1 1/2 inch (4 cm) pieces
+
+               3 tablespoons (30 grams) cornstarch
+
+               3/4 cup (150 grams) granulated white sugar
+
+               1/4 teaspoon ground cinnamon
+
+               1 teaspoon fresh lemon juice
+
+               2 tablespoons (28 grams) unsalted butter, cut into small chunks
+
+               Glaze:
+
+               2 tablespoons milk
+
+               Granulated white sugar
+""",
+               directions: "In a food processor, place the flour, salt, and sugar and process until combined. Add the butter and process until the mixture resembles coarse. Turn the dough onto your work surface and gather into a ball. Divide the dough in half, flattening each half into a disk, cover with plastic wrap, and refrigerate for about one hour before using. This will chill the butter and relax the gluten in the flour. After the dough has chilled sufficiently, remove one portion of the dough from the fridge and place it on a lightly floured surface.  Roll the  pastry into a 12 inch (30 cm) circle. (To prevent the pastry from sticking to the counter and to ensure uniform thickness, keep lifting up and turning the pastry a quarter turn as you roll (always roll from the center of the pastry outwards).)  Fold the dough in half and gently transfer to a 9 inch (23 cm) pie pan. Brush off any excess flour and trim any overhanging pastry to an edge of 1/2 inch (1.5 cm). Refrigerate the pastry, covered with plastic wrap, while you make the filling.Remove the second round of pastry and roll it into a 13 inch (30 cm) circle. Using a pastry wheel or pizza cutter, cut the pastry into about 3/4 inch (2 cm) strips. Place the strips of pastry on a parchment paper-lined baking sheet, cover with plastic wrap, and place in the refrigerator for about 10 minutes.",
+               category: "British",
+               url: "https://www.joyofbaking.com/StrawberryRhubarbPie.html",
+               photoUrlLarge: "https://d3jbb8n5wk0qxi.cloudfront.net/photos/74cf131b-c541-4871-bed7-588a1f369c7d/large.jpg",
+               photoUrlSmall: "https://d3jbb8n5wk0qxi.cloudfront.net/photos/74cf131b-c541-4871-bed7-588a1f369c7d/small.jpg",
+               youtube_url: "https://www.youtube.com/watch?v=tGw5Pwm4YA0"),
+        Recipe( id: "9f5a753e-472d-413e-a05b-ffbc8032e64c",
+                name: "Sugar Pie",
+                description: "is a classic French-Canadian dessert with a rich, sweet filling made from brown sugar, butter, cream, and a hint of vanilla. ",
+                ingredients: """
+                2 cups brown sugar
+                
+                ¼ cup butter, softened
+
+                2 eggs
+
+                1 teaspoon vanilla extract
+
+                1 teaspoon salt
+
+                ½ cup all-purpose flour
+
+                1 ½ cups milk
+""",
+                directions: "Preheat oven to 350 degrees F (175 degrees C). Grease a 9-inch pie dish. Place the brown sugar and butter in a mixing bowl, and beat them together with an electric mixer until creamy and very well combined, without lumps. Beat in eggs, one at a time, incorporating the first egg before adding the next one. Add the vanilla extract and salt; beat the flour in, a little at a time, and then the milk, making a creamy batter. Pour the batter into the prepared pie dish. Bake in the preheated oven for 35 minutes; remove pie, and cover the rim with aluminum foil to prevent burning. Return to oven, and bake until the middle sets and the top forms a crusty layer, about 15 more minutes. Let the pie cool to room temperature, then refrigerate for at least 1 hour before serving.",
+               category: "Canadian",
+               url: "http://allrecipes.com/recipe/213595/miraculous-canadian-sugar-pie/",
+               photoUrlLarge: "https://d3jbb8n5wk0qxi.cloudfront.net/photos/25624a61-cf25-4e26-8a3a-b38f347e3642/large.jpg",
+               photoUrlSmall: "https://d3jbb8n5wk0qxi.cloudfront.net/photos/25624a61-cf25-4e26-8a3a-b38f347e3642/small.jpg",
+               youtube_url: "https://www.youtube.com/watch?v=uVQ66jiL-Dc"),
+        Recipe( id: "9dd84450-9922-463a-bece-64f32f7a7dc5",
+                name: "Summer Pudding",
+                description: "is a refreshing, fruit-filled British dessert made with a medley of summer berries, such as raspberries, strawberries, and blackberries.",
+                ingredients: """
+                300g strawberry
+                250g blackberry
+                100g redcurrant
+                500g raspberry
+                OR 1.25kg/2lb 12oz mixed berries and currants
+                of your choice
+                175g golden caster sugar
+                7 slices day-old white bread
+                from a square, medium-cut loaf
+""",
+                directions: """
+                Prepare the fruit: Wash and dry the fruit (keep strawberries separate). Heat sugar and 3 tbsp water in a pan until dissolved, then bring to a boil for 1 minute. Add the fruit (except strawberries), cook for 3 minutes, then strain the fruit and juice.
+                
+                Prepare the bowl and bread: Line a 1.25-litre basin with cling film, leaving an overhang. Trim the crusts off the bread, cutting 4 pieces in half and 2 into triangles.
+
+                Assemble the pudding: Dip the bread into the juice and line the basin, pressing pieces around the sides. Spoon in the fruit, adding strawberries as you go.
+
+                Set and serve: Cover with bread triangles, trim excess, and seal with cling film. Weight down with a plate and cans, chill for 6 hours or overnight. Flip onto a serving plate and serve with extra juice, berries, and cream
+""",
+                category: "British",
+                url: "https://www.bbcgoodfood.com/recipes/4516/summer-pudding",
+               photoUrlLarge: "https://d3jbb8n5wk0qxi.cloudfront.net/photos/d7f2d753-a434-426b-afdd-c63b899bcac1/large.jpg",
+               photoUrlSmall: "https://d3jbb8n5wk0qxi.cloudfront.net/photos/d7f2d753-a434-426b-afdd-c63b899bcac1/small.jpg",
+               youtube_url: "https://www.youtube.com/watch?v=akJIO6UhXtA"),
+        Recipe(id: "744859ba-df52-4d56-b919-55fab43e8a45",
+               name: "Tarte Tatin",
+               description: " is a classic French upside-down caramelized apple tart.",
+               ingredients: """
+               300g all-butter puff pastry
+               plain flour
+               for dusting
+               6 dessert apples
+               (about 900g/2lb), such as Braeburn, Cox’s Orange Pippin or Adam’s Pearmain
+               100g golden caster sugar
+               85g unsalted butter
+               (60g/21/4oz chilled and diced, 25g/1oz melted)
+               crème fraîche
+               (full-fat please!) or high-quality vanilla ice cream, to serve
+""",
+               directions: """
+               Roll pastry to a 3mm thickness, cut into a 24cm circle, prick with a fork, and freeze on a baking sheet.
+               
+               Preheat oven to 180C/160C fan/gas 4. Peel, core, and quarter apples. Heat sugar in a 20cm flameproof dish until dark amber, then stir in butter.
+
+               Arrange apples tightly in the dish, rounded-side down, and brush with melted butter.
+
+               Bake for 30 minutes. Place the frozen pastry on top, tuck edges inside, prick with a knife, and bake for another 40-45 minutes until golden and crisp.
+
+               Cool for 1 hour, then invert onto a serving plate. Serve with crème fraîche or ice cream.
+""",
+               category: "French",
+               url: "https://www.bbcgoodfood.com/recipes/tarte-tatin",
+               photoUrlLarge: "https://d3jbb8n5wk0qxi.cloudfront.net/photos/51271127-2c5f-4b65-87d4-f56f8f9a9549/large.jpg",
+               photoUrlSmall: "https://d3jbb8n5wk0qxi.cloudfront.net/photos/51271127-2c5f-4b65-87d4-f56f8f9a9549/small.jpg",
+               youtube_url: "https://www.youtube.com/watch?v=8xDM8U6h9Pw"),
+        Recipe( id: "20e87ac3-e409-418c-a503-b466ab9b3752",
+                name: "Timbits",
+                description: "are bite-sized doughnut holes, a popular treat in Canada, originally made from the leftover dough when cutting doughnuts.",
+                ingredients: """
+                2 cups sifted flour
+                1⁄3 cup sugar
+                3 teaspoons baking powder
+                1⁄2 teaspoon salt
+                1 egg, slightly beaten
+                3⁄4 cup milk
+                3 tablespoons oil
+                additional oil (for frying)
+""",
+                directions: """
+                Sift together dry ingredients.
+                Mix together wet ingredients and incorporate into dry. Stir until smooth.
+                Drop by teaspoonfuls(no bigger) into hot oil (365 degrees, no hotter), turning after a few moments until golden brown on all sides.
+                Remove and drain.
+                Roll in cinnamon sugar while still warm and serve.
+""",
+               category: "Canadian",
+               url: "http://www.geniuskitchen.com/recipe/drop-doughnuts-133877",
+               photoUrlLarge: "https://d3jbb8n5wk0qxi.cloudfront.net/photos/7f6a259a-71df-42c2-b314-065e0c736c67/large.jpg",
+               photoUrlSmall: "https://d3jbb8n5wk0qxi.cloudfront.net/photos/7f6a259a-71df-42c2-b314-065e0c736c67/small.jpg",
+               youtube_url: "https://www.youtube.com/watch?v=fFLn1h80AGQ"),
+        Recipe( id: "55dcfb29-fe1b-4c28-8d0b-361497ae27f7",
+               name: "Treacle Tart",
+                description: "is a traditional British dessert made with a buttery shortcrust pastry filled with a sweet, sticky mixture of golden syrup, breadcrumbs, and lemon juice.",
+                ingredients: """
+                250g/9oz plain flour: 250g/9oz plain flour
+                130g/4½oz butter, plus extra for greasing: 130g/4½oz butter, plus extra for greasing
+                For the filling
+                400g/14oz golden syrup: 400g/14oz golden syrup
+                150g/5½oz fine fresh white breadcrumbs: 150g/5½oz fine fresh white breadcrumbs
+                2 lemons, zest and juice: 2 lemons, zest and juice
+                1 free-range egg, beaten, to use as egg wash
+""",
+                directions: """
+                To make the pastry, rub butter into flour until it resembles breadcrumbs. Add water to form a dough, wrap in cling film, and chill for 20 minutes.
+                
+                Preheat oven to 200C/180C Fan/Gas 6. Grease an 18cm flan tin and place a baking tray in the oven. Set aside 150g of pastry for the lattice.
+
+                Roll out the remaining pastry, line the tin, and prick the base. Roll out the reserved pastry for the lattice and chill.
+
+                For the filling, heat syrup and add breadcrumbs, lemon juice, and zest. Add more breadcrumbs if needed. Pour mixture into the tin.
+
+                Cut reserved pastry into strips, egg wash the edge, and create a lattice. Trim excess pastry with the tin edge.
+
+                Bake on the preheated tray for 10 minutes, then reduce oven to 180C/160C Fan/Gas 4. Cover with foil if lattice browns too much. Bake for 25-30 minutes until golden and set.
+
+                Let cool in the tin before serving warm or cold.
+""",
+               category: "British",
+               url: "https://www.bbc.co.uk/food/recipes/mary_berrys_treacle_tart_28524",
+               photoUrlLarge: "https://d3jbb8n5wk0qxi.cloudfront.net/photos/dac510db-fa7f-4bf1-af61-706a9c960455/large.jpg",
+               photoUrlSmall: "https://d3jbb8n5wk0qxi.cloudfront.net/photos/dac510db-fa7f-4bf1-af61-706a9c960455/small.jpg",
+               youtube_url: "https://www.youtube.com/watch?v=YMmgKCNcqwI"),
+        Recipe(id: "a1bedde3-2bc6-46f9-ab3c-0d98a2b11b64",
+               name: "Tunisian Orange Cake",
+               description: "is a moist and fragrant dessert made with whole oranges, which are boiled and blended into a smooth puree that becomes the base of the cake. ",
+               ingredients: "Coming Soon!",
+               directions: "Coming Soon!",
+               category: "Tunisian",
+               url: "http://allrecipes.co.uk/recipe/16067/tunisian-orange-cake.aspx",
+               photoUrlLarge: "https://d3jbb8n5wk0qxi.cloudfront.net/photos/903015fb-7bc2-426b-aa1b-724d0007ce30/large.jpg",
+               photoUrlSmall: "https://d3jbb8n5wk0qxi.cloudfront.net/photos/903015fb-7bc2-426b-aa1b-724d0007ce30/small.jpg",
+               youtube_url: "https://www.youtube.com/watch?v=rCUxg866Ea4"),
+        Recipe( id: "7d6a2c69-f0ef-459a-abf5-c2e90b6555ff",
+               name: "Walnut Roll Gužvara",
+                description: " is a traditional Eastern European pastry made with a rich, buttery dough filled with a sweet walnut mixture.",
+                ingredients: "Coming Soon!",
+                directions: "Coming Soon!",
+               category: "Croatian",
+               url: "https://www.visit-croatia.co.uk/croatian-cuisine/croatian-recipes/",
+               photoUrlLarge: "https://d3jbb8n5wk0qxi.cloudfront.net/photos/8f60cd87-20ab-419b-a425-56b7ad7c8566/large.jpg",
+               photoUrlSmall: "https://d3jbb8n5wk0qxi.cloudfront.net/photos/8f60cd87-20ab-419b-a425-56b7ad7c8566/small.jpg",
+               youtube_url: "https://www.youtube.com/watch?v=Q_akngSJVrQ"),
+        Recipe(id: "ef7d81b7-07ba-4fab-a791-ae10e2817e66",
+               name: "White Chocolate Crème Brûlée",
+               description: "is a luxurious twist on the classic French dessert.",
+               ingredients: """
+               568ml pot double cream
+               100g Green & Black's white chocolate
+               broken into pieces
+               1 vanilla
+               pod, split or 1 tsp vanilla extract
+               6 egg
+               yolks
+               2 tbsp golden caster sugar
+               plus extra for topping
+""",
+               directions: """
+               Heat cream, chocolate, and vanilla pod until melted. Remove from heat and infuse for 10 mins, scraping in the pod seeds (or add vanilla extract).
+               
+               Beat yolks and sugar until pale, then stir in the chocolate cream. Strain and pour into ramekins. Place in a roasting tray, add boiling water halfway up the sides, and bake at 160°C for 15-20 mins until just set. Chill for at least 4 hrs.
+
+               Sprinkle sugar on top and caramelize with a blowtorch or under a hot grill. Let the caramel harden, then serve.
+""",
+               category: "French",
+               url: "https://www.bbcgoodfood.com/recipes/2540/white-chocolate-crme-brle",
+               photoUrlLarge: "https://d3jbb8n5wk0qxi.cloudfront.net/photos/f4b7b7d7-9671-410e-bf81-39a007ede535/large.jpg",
+               photoUrlSmall: "https://d3jbb8n5wk0qxi.cloudfront.net/photos/f4b7b7d7-9671-410e-bf81-39a007ede535/small.jpg",
+               youtube_url: "https://www.youtube.com/watch?v=LmJ0lsPLHDc"),
+        ]
+}
