@@ -1,0 +1,17 @@
+//
+//  Big_Mamas_CookingTests.swift
+//  Big Mamas CookingTests
+//
+//  Created by Tahzjeen-Amir on 2/4/25.
+//
+
+import Testing
+@testable import Big_Mamas_Cooking
+
+struct Big_Mamas_CookingTests {
+
+    @Test func example() async throws {
+        // Write your test here and use APIs like `#expect(...)` to check expected conditions.
+    }
+
+}
