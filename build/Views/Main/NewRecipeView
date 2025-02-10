@@ -1,0 +1,39 @@
+//
+//  NewRecipeView.swift
+//  Big Mamas Cooking
+//
+//  Created by Tahzjeen-Amir on 2/4/25.
+//
+
+import SwiftUI
+
+struct NewRecipeView: View {
+    @State private var showAddRecipeView = false
+    @State private var recipes: [Recipe] = []
+    
+    var body: some View {
+        NavigationView {
+            VStack {
+                Text("New Recipes")
+                
+                Button("Add Recipe") {
+                    showAddRecipeView = true
+                }
+                .padding()
+                .background(Color.green)
+                .foregroundColor(.white)
+                .cornerRadius(10)
+            }
+            .sheet(isPresented: $showAddRecipeView) {
+                AddRecipeView(recipes: $recipes)  
+            }
+        }
+        .navigationViewStyle(.stack)
+    }
+}
+
+struct NewRecipeView_Previews: PreviewProvider {
+    static var previews: some View {
+        NewRecipeView()
+    }
+}
