@@ -1,0 +1,115 @@
+//
+//  AddRecipeView.swift
+//  Big Mamas Cooking
+//
+//  Created by Tahzjeen-Amir on 2/9/25.
+//
+
+import SwiftUI
+
+struct AddRecipeView: View {
+    @State private var name: String = ""
+    @State private var description: String = ""
+    @State private var ingredients: String = ""
+    @State private var directions: String = ""
+    @State private var category: String = ""
+    
+    @Environment(\.presentationMode) var presentationMode
+    @Binding var recipes: [Recipe]  // Binding to the recipe list in the parent view
+    
+    var body: some View {
+        NavigationView {
+            Form {
+                recipeDetailsSection
+                saveButtonSection
+            }
+            .navigationTitle("Add New Recipe")
+            .toolbar {
+                ToolbarItem(placement: .cancellationAction) {
+                    Button("Cancel") {
+                        presentationMode.wrappedValue.dismiss()
+                    }
+                }
+            }
+        }
+        .navigationViewStyle(.stack)
+    }
+    
+    private var recipeDetailsSection: some View {
+        Section(header: Text("Recipe Details").font(.headline)) {
+            TextField("Name", text: $name)
+            TextField("Description", text: $description)
+            ingredientsTextEditor
+            directionsTextEditor
+            TextField("Category", text: $category)
+        }
+    }
+    
+    private var saveButtonSection: some View {
+        Section {
+            Button(action: saveRecipe) {
+                Text("Save Recipe")
+                    .frame(maxWidth: .infinity)
+                    .padding()
+                    .background(Color.blue)
+                    .foregroundColor(.white)
+                    .cornerRadius(10)
+            }
+        }
+    }
+    
+ 
+    private var ingredientsTextEditor: some View {
+        TextEditor(text: $ingredients)
+            .frame(height: 150)
+            .border(Color.gray, width: 1)
+            .padding(5)
+            .overlay(
+                Text("Ingredients")
+                    .foregroundColor(.gray)
+                    .padding(5),
+                alignment: .topLeading
+            )
+    }
+    
+    private var directionsTextEditor: some View {
+        TextEditor(text: $directions)
+            .frame(height: 150)
+            .border(Color.gray, width: 1)
+            .padding(5)
+            .overlay(
+                Text("Directions")
+                    .foregroundColor(.gray)
+                    .padding(5),
+                alignment: .topLeading
+            )
+    }
+    
+    private func saveRecipe() {
+        guard !name.isEmpty, !description.isEmpty, !ingredients.isEmpty, !directions.isEmpty, !category.isEmpty else {
+            // Show an alert or some validation message
+            return
+        }
+        
+        let newRecipe = Recipe(
+            id: "",
+            name: name,
+            description: description,
+            ingredients: ingredients,
+            directions: directions,
+            category: category,
+            url: "",
+            photoUrlLarge: "",
+            photoUrlSmall: "",
+            youtube_url: ""
+        )
+        recipes.append(newRecipe)
+        presentationMode.wrappedValue.dismiss()
+    }
+}
+
+struct AddRecipeView_Previews: PreviewProvider {
+    static var previews: some View {
+        AddRecipeView(recipes: .constant([]))
+    }
+}
