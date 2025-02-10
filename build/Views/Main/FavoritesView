@@ -1,0 +1,25 @@
+//
+//  FavoritesView.swift
+//  Big Mamas Cooking
+//
+//  Created by Tahzjeen-Amir on 2/4/25.
+//
+
+import SwiftUI
+
+struct FavoritesView: View {
+    var body: some View {
+        NavigationView {
+            Text("You have no favorite recipes yet! ")
+                .padding()
+                .navigationTitle("Favorites")
+        }
+        .navigationViewStyle(.stack)
+    }
+    
+    struct FavoritesView_Previews: PreviewProvider {
+        static var previews: some View {
+            FavoritesView()
+        }
+    }
+}
