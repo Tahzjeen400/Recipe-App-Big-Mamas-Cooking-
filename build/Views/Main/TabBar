@@ -1,0 +1,44 @@
+//
+//  TabBar.swift
+//  Big Mamas Cooking
+//
+//  Created by Tahzjeen-Amir on 2/5/25.
+//
+
+import SwiftUI
+
+struct TabBar: View {
+    var body: some View {
+        NavigationView {
+            TabView {
+                HomeView()
+                    .tabItem {
+                        Label("Home",systemImage: "house")
+                    }
+                CategoriesView()
+                    .tabItem {
+                        Label("Categories", systemImage: "circle.grid.2x2")
+                    }
+                NewRecipeView()
+                    .tabItem {
+                        Label("New Recipe", systemImage: "text.badge.plus")
+                    }
+                        
+                FavoritesView()
+                    .tabItem {
+                        Label("Favorites", systemImage: "heart.fill")
+                            }
+                SettingsView()
+                    .tabItem {
+                        Label("Settings", systemImage: "gearshape.2")
+                    }
+            }
+        }
+    }
+    
+    struct TabBar_Previews: PreviewProvider {
+        static var previews: some View {
+            TabBar()
+        }
+    }
+}
