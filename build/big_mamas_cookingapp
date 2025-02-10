@@ -1,1 +1,18 @@
+//
+//  Big_Mamas_CookingApp.swift
+//  Big Mamas Cooking
+//
+//  Created by Tahzjeen-Amir on 2/4/25.
+//
+
+import SwiftUI
+
+@main
+struct Big_Mamas_CookingApp: App {
+    var body: some Scene {
+        WindowGroup {
+            ContentView()
+        }
+    }
+}
 
