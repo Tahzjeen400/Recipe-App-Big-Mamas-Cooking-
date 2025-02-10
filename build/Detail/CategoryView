@@ -1,0 +1,45 @@
+//
+//  CategoryView.swift
+//  Big Mamas Cooking
+//
+//  Created by Tahzjeen-Amir on 2/9/25.
+//
+import SwiftUI
+
+struct CategoryView: View {
+    private var categorizedRecipes: [String: [Recipe]] {
+        Dictionary(grouping: Recipe.all, by: { $0.category })
+    }
+    
+    var body: some View {
+        NavigationView {
+            List {
+                ForEach(categorizedRecipes.keys.sorted(), id: \..self) { category in
+                    Section(header: Text(category).font(.headline)) {
+                        ForEach(categorizedRecipes[category] ?? [], id: \..id) { recipe in
+                            NavigationLink(destination: RecipeView(recipe: recipe)) {
+                                VStack(alignment: .leading) {
+                                    Text(recipe.name)
+                                        .font(.title2)
+                                        .fontWeight(.bold)
+                                    Text(recipe.description)
+                                        .font(.subheadline)
+                                        .foregroundColor(.gray)
+                                }
+                                .padding(.vertical, 5)
+                            }
+                        }
+                    }
+                }
+            }
+            .navigationTitle("Categories")
+        }
+        .navigationViewStyle(.stack)
+    }
+}
+
+struct CategoryView_Previews: PreviewProvider {
+    static var previews: some View {
+        CategoryView()
+    }
+}
