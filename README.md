@@ -3,6 +3,10 @@ a mobile application designed to help users discover, create, and manage recipes
 ### Summary: Include screenshots or a video of your app highlighting its features
 Video attached: https://github.com/user-attachments/assets/afd57803-f719-4852-8e4f-ef66724044e7
 
+
+https://github.com/user-attachments/assets/a996a812-2e29-4de7-a853-8fc9c22061aa
+
+
 ### Focus Areas: What specific areas of the project did you prioritize? Why did you choose to focus on these areas?
 The priority of this project was solely on the initial presentation. I wanted the home screen to display tabs that are functional for the user to engage with.
 
