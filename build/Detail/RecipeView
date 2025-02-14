@@ -6,16 +6,19 @@
 //
 
 import SwiftUI
+import WebKit
 
 struct RecipeView: View {
     var recipe: Recipe
-    
+
     var body: some View {
         ScrollView {
             AsyncImage(url: URL(string: recipe.photoUrlLarge)) { image in
                 image
                     .resizable()
                     .aspectRatio(contentMode: .fill)
+                    .frame(height: 400)
+                    .clipped()
             } placeholder: {
                 Image(systemName: "photo")
                     .resizable()
@@ -24,7 +27,6 @@ struct RecipeView: View {
                     .foregroundColor(.white.opacity(0.7))
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
             }
-            .frame(height: 400)
             .background(
                 LinearGradient(
                     gradient: Gradient(colors: [Color.gray.opacity(0.3), Color.gray]),
@@ -33,40 +35,67 @@ struct RecipeView: View {
                 )
             )
 
-            VStack(spacing: 20) {
+            VStack(spacing: 16) {
                 Text(recipe.name)
                     .font(.largeTitle)
                     .bold()
                     .multilineTextAlignment(.center)
 
-                VStack(alignment: .leading, spacing: 20) {
-                    if !recipe.description.isEmpty {
-                        Text(recipe.description)
-                    }
-                    
-                    if !recipe.ingredients.isEmpty {
-                        VStack(alignment: .leading, spacing: 10) {
-                            Text("Ingredients:")
-                                .font(.headline)
-                            
-                            Text(recipe.ingredients)
-                        }
-                    }
-                    
-                    if !recipe.directions.isEmpty {
-                        VStack(alignment: .leading, spacing: 10) {
-                            Text("Directions:")
-                                .font(.headline)
-                            
-                            Text(recipe.directions)
-                        }
-                    }
+                if !recipe.description.isEmpty {
+                    Text(recipe.description)
+                        .padding(.top, 8)
                 }
-                .padding(.horizontal)
+
+                if !recipe.ingredients.isEmpty {
+                    SectionView(title: "Ingredients:", content: recipe.ingredients)
+                }
+
+                if !recipe.directions.isEmpty {
+                    SectionView(title: "Directions:", content: recipe.directions)
+                }
+
+                if !recipe.youtube_url.isEmpty, let url = URL(string: recipe.youtube_url) {
+                    VStack(alignment: .leading, spacing: 8) {
+                        Text("Video Tutorial:")
+                            .font(.headline)
+                        YouTubeView(videoURL: url)
+                            .frame(height: 200)
+                            .cornerRadius(8)
+                    }
+                    .padding(.top, 8)
+                }
             }
-            .padding()
+            .padding(.horizontal)
+            .padding(.bottom)
         }
-        .ignoresSafeArea(.container, edges: .top)
+        .ignoresSafeArea(edges: .top)
+    }
+}
+
+struct SectionView: View {
+    let title: String
+    let content: String
+
+    var body: some View {
+        VStack(alignment: .leading, spacing: 8) {
+            Text(title)
+                .font(.headline)
+            Text(content)
+        }
+        .padding(.top, 8)
+    }
+}
+
+struct YouTubeView: UIViewRepresentable {
+    let videoURL: URL
+
+    func makeUIView(context: Context) -> WKWebView {
+        WKWebView()
+    }
+
+    func updateUIView(_ uiView: WKWebView, context: Context) {
+        let request = URLRequest(url: videoURL)
+        uiView.load(request)
     }
 }
 
