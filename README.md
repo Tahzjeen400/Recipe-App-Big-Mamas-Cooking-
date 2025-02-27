@@ -1,5 +1,5 @@
 # Recipe-App-Big-Mamas-Cooking-
-a mobile application designed to help users discover, create, and manage recipes efficiently. It typically allows users to browse recipes by category.  The app shows ingredients for each recipe, and provides detailed step-by-step directions for preparing delicious treats!
+a mobile application designed to help users discover, create, and manage recipes efficiently. Typically it allows users to browse recipes by category.  The app shows ingredients for each recipe, and provides detailed step-by-step directions for preparing delicious treats!
 ### Summary: Include screenshots or a video of your app highlighting its features
 Video attached: https://github.com/user-attachments/assets/afd57803-f719-4852-8e4f-ef66724044e7
 
